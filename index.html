@@ -95,7 +95,7 @@ ul.plain li::before{content:'';position:absolute;left:0;top:11px;width:7px;heigh
 .hero{position:relative;overflow:hidden;background:var(--bg)}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,4vw,60px);
   align-items:center;padding:clamp(44px,6vw,88px) 0 clamp(40px,5vw,72px)}
-.pill{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--magenta-dk);
+.pill{display:inline-block;font-size:13px;line-height:1.35;font-weight:700;color:var(--magenta-dk);
   background:#fff;border:1px solid var(--pink-soft);padding:8px 16px;border-radius:100px;margin-bottom:22px;box-shadow:0 4px 16px -8px rgba(205,36,113,.3)}
 .pill b{color:var(--blue)}
 h1.hero-h1{font-size:clamp(2.1rem,4.7vw,3.55rem);font-weight:800;line-height:1.06}
@@ -422,9 +422,50 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 @media (max-width:900px){
   .proof{grid-template-columns:1fr}
   .gemma-ws{right:-8px;bottom:-20px;width:50%}
-  .ckb{right:16px;bottom:88px}
+  .ckb{right:16px}
+  body.sticky-on .ckb{bottom:88px}
 }
 
+/* ===== TELEFONO ===== */
+.swipe-hint{display:none}
+@media (max-width:640px){
+  header .btn{display:none}
+  .hd{padding:10px 0}
+  .hd-logo img{height:34px}
+  .pill{font-size:12.5px;padding:7px 14px}
+  /* casi studio e video: si sfogliano di lato invece di uno sotto l'altro */
+  .cs-grid,.vidgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-inline:-4vw;padding-inline:4vw;scroll-padding-inline:4vw}
+  .cs-grid{gap:14px;margin-top:32px;padding-top:6px;padding-bottom:14px}
+  .vidgrid{gap:12px;margin-top:30px;padding-bottom:8px}
+  .cs-grid::-webkit-scrollbar,.vidgrid::-webkit-scrollbar,.fbwall::-webkit-scrollbar{display:none}
+  .cs-card,.cs-card.feat{flex:0 0 86%;scroll-snap-align:start}
+  .cs-card:hover{transform:none}
+  .vtile{flex:0 0 60%;scroll-snap-align:start}
+  .swipe-hint{display:block;margin-top:6px;text-align:right;font-family:'Gochi Hand',cursive;font-size:19px;color:var(--magenta);line-height:1}
+  /* muro dei feedback: fermo, si sfoglia col dito */
+  .fbwall{-webkit-mask-image:none;mask-image:none;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 4vw 8px;scroll-padding-inline:4vw}
+  .fbtrack{animation:none;gap:12px}
+  .fbcard{width:78vw;max-width:300px;scroll-snap-align:start}
+  .fbcard:nth-child(n+13){display:none}
+  /* modulo a tutta larghezza, sale dal basso; campi a 16px così iPhone non zooma */
+  .modal{padding:0;place-items:end center}
+  .modal-card{width:100%;max-height:92vh;border-radius:22px 22px 0 0;padding:26px 18px 30px}
+  .field input,.field select,.field textarea{font-size:16px}
+  .chip span{font-size:14.5px}
+  /* testi piccoli più leggibili */
+  .cs-metric span,.hero-badge span,.vtile .vcap span{font-size:12.5px}
+  .cs-niche{font-size:11.5px}
+  /* barra in basso: solo il bottone */
+  .sticky p{display:none}
+  .sticky .btn{flex:1;padding:14px 20px;font-size:15px}
+  .ckb{left:10px;right:10px;bottom:10px;padding:12px 12px 12px 14px;display:flex;gap:12px;align-items:center}
+  .ckb p{font-size:12.5px;margin:0;flex:1;line-height:1.4}
+  .ckb .ckbtn{flex-direction:column;gap:6px;flex:0 0 auto}
+  .ckb .btn{padding:9px 16px;font-size:13.5px}
+  .ft-legal a,.ft-legal button{padding:9px 0;margin-bottom:0}
+}
+
+@media (max-width:360px){ .pill{border-radius:16px} }
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -439,11 +480,12 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
   .cases{grid-template-columns:1fr}
   .fase{grid-template-columns:1fr;gap:12px}
   .ft-grid{grid-template-columns:1fr;gap:28px}
-  .sticky{display:flex}
+  .sticky{display:flex;transform:translateY(110%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+  body.sticky-on .sticky{transform:none}
   body{padding-bottom:74px}
 }
 @media (max-width:640px){ .cs-grid{grid-template-columns:1fr} .cs-card.feat{grid-column:auto} .cs-metrics{gap:12px 18px} .cs-metric b{font-size:1.25rem} }
-@media (max-width:540px){ .f2{grid-template-columns:1fr} .hero-cta .btn{width:100%} .ckb{bottom:84px} }
+@media (max-width:540px){ .f2{grid-template-columns:1fr} .hero-cta .btn{width:100%} }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -825,6 +867,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
         <p class="cs-note">Una direzione chiara ha trasformato i contenuti in <em>richieste reali di clienti</em></p>
       </div>
     </div>
+    <p class="swipe-hint" aria-hidden="true">scorri per gli altri casi →</p>
 
     <div class="big-quote reveal">
       <p>"In un solo mese ho fatto <em>più progressi</em> che in tre anni da sola."</p>
@@ -855,6 +898,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
       <div class="vtile reveal" data-video="laura-laspina"><img loading="lazy" src="assets/video/posters/laura-laspina.jpg" alt="Testimonianza di Laura Laspina, Evolush"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Laura Laspina</b><span>Evolush · estetica</span></div></div>
       <div class="vtile reveal" data-video="doina"><img loading="lazy" src="assets/video/posters/doina.jpg" alt="Testimonianza di Doina"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Doina</b><span>Cliente del percorso</span></div></div>
     </div>
+    <p class="swipe-hint" aria-hidden="true">scorri per le altre →</p>
   </div>
 </section>
 
@@ -870,6 +914,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
   <div class="fbwall reveal">
     <div class="fbtrack" id="fbTrack"></div>
   </div>
+  <div class="wrap"><p class="swipe-hint" aria-hidden="true">scorri →</p></div>
 </section>
 
 <!-- GEMMA -->
@@ -1212,6 +1257,12 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   document.getElementById('ckSi').addEventListener('click',()=>salva('si'));
   document.getElementById('ckNo').addEventListener('click',()=>salva('no'));
   document.getElementById('ckOpen').addEventListener('click',()=>{ckb.hidden=false;});
+})();
+
+/* barra in basso su telefono: solo dopo aver superato il primo bottone */
+(function(){
+  const cta=document.querySelector('.hero-cta'); if(!cta||!('IntersectionObserver' in window)){document.body.classList.add('sticky-on');return;}
+  new IntersectionObserver(es=>{es.forEach(e=>document.body.classList.toggle('sticky-on',!e.isIntersecting&&e.boundingClientRect.top<0));}).observe(cta);
 })();
 
 /* modal */

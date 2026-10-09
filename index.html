@@ -700,6 +700,40 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
   .split-l{position:static}
 }
 
+/* ===== IL TEAM: polaroid con ruolo e cosa fa per te ===== */
+.team{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;margin-top:50px;align-items:start}
+.tcard{margin:0;background:#fff;padding:10px 10px 18px;border-radius:6px;box-shadow:var(--ombra);position:relative}
+.tcard:nth-child(odd){rotate:-1.6deg}
+.tcard:nth-child(even){rotate:1.4deg;margin-top:22px}
+.tcard::before{content:'';position:absolute;top:-18px;left:50%;width:40px;height:40px;margin-left:-20px;background:url(assets/deco/puntina.png) center/contain no-repeat;z-index:2}
+.tfoto{aspect-ratio:4/5;overflow:hidden;border-radius:3px;background:var(--pink-soft)}
+.tfoto img{width:100%;height:100%;object-fit:cover}
+.tcard figcaption{padding:14px 6px 0;margin:0;color:var(--body)}
+.trole{display:inline-block;font-weight:800;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--fucsia);padding:6px 9px 5px;border-radius:4px;rotate:-1.5deg;margin-bottom:10px}
+.tcard:nth-child(even) .trole{background:var(--blu)}
+.tcard b{display:block;font-size:1.45rem;font-weight:900;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:8px}
+.tcard p{font-size:.92rem;line-height:1.5;color:var(--body)}
+.bg-scuro .swipe-hint{color:#F2C4DC}
+.team-nota{margin-top:30px;text-align:center;font-family:var(--mano);font-size:1.6rem;line-height:1.1;color:var(--fucsia);rotate:-1.5deg}
+/* ===== Katia accanto ai bottoni di prenotazione ===== */
+.con-katia{display:inline-flex;align-items:center;gap:12px;margin-top:18px;background:#fff;border-radius:100px;padding:6px 18px 6px 6px;box-shadow:0 10px 24px -16px rgba(59,54,56,.5);font-size:14.5px;color:var(--body);line-height:1.3;text-align:left}
+.con-katia img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 2px var(--fucsia);flex:0 0 auto}
+.con-katia b{color:var(--ink)}
+.bg-fucsia .con-katia{background:rgba(255,255,255,.14);color:#fff;box-shadow:none}
+.bg-fucsia .con-katia b{color:#fff}
+.bg-fucsia .con-katia img{box-shadow:0 0 0 2px #fff}
+.modal .con-katia{margin:0 0 18px;background:var(--azzurro);box-shadow:none}
+.done .con-katia{margin:2px auto 14px}
+@media (max-width:1100px) and (min-width:641px){ .team{display:flex;flex-wrap:wrap;justify-content:center} .tcard{flex:0 1 calc((100% - 44px)/3)} .tcard:nth-child(even){margin-top:0} }
+@media (max-width:640px){
+  .team{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:-4vw;padding:24px 4vw 14px;scroll-padding-inline:4vw;gap:16px}
+  .team::-webkit-scrollbar{display:none}
+  .tcard{flex:0 0 72%;scroll-snap-align:start}
+  .tcard:nth-child(odd),.tcard:nth-child(even){rotate:0deg;margin-top:0}
+  .con-katia{font-size:13.5px}
+  .team-nota{font-size:1.4rem;margin-top:18px}
+}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -745,6 +779,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
       <div class="hero-cta">
         <button class="btn btn-primary btn-lg" data-open-form>Prenota la consulenza strategica gratuita</button>
       </div>
+      <div class="con-katia"><img src="assets/team/katia-volto.jpg" alt="Katia del team Unlike" width="46" height="46"><span>La call conoscitiva la fai con <b>Katia</b>, del team Unlike</span></div>
       <p class="hero-note">Nessun obbligo di acquisto. Ti proponiamo un percorso solo se sappiamo realmente di poterti aiutare.</p>
     </div>
     <div class="hero-photo">
@@ -1186,8 +1221,28 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
   </div>
 </section>
 
+<!-- IL TEAM -->
+<section class="sec bg-carta" id="team">
+  <div class="wrap">
+    <div class="narrow reveal" style="margin-inline:auto;text-align:center">
+      <div class="eyebrow c">Il team</div>
+      <h2 class="sh">Chi ti <mark>seguirà</mark>, e cosa fa per te</h2>
+      <p class="lead" style="margin-top:16px">Dalla prima call all'ultimo giorno sai sempre chi fa cosa</p>
+    </div>
+    <div class="team">
+      <figure class="tcard reveal"><div class="tfoto"><img src="assets/team/katia.jpg" alt="Katia del team Unlike" loading="lazy" width="560" height="700"></div><figcaption><span class="trole">La tua prima call</span><b>Katia</b><p>Fa con te la call conoscitiva gratuita: capisce da dove parti e ti dice con onestà se un percorso fa per te. A fine percorso fa con te il punto sui risultati</p></figcaption></figure>
+      <figure class="tcard reveal"><div class="tfoto"><img src="assets/team/elena.jpg" alt="Elena del team Unlike" loading="lazy" width="560" height="700"></div><figcaption><span class="trole">Ti accoglie e ti segue</span><b>Elena</b><p>Ti fa la call di benvenuto, ti apre chat e portale e prepara il tuo file strategico. Controlla la chat ogni giorno: nessuna domanda resta senza risposta</p></figcaption></figure>
+      <figure class="tcard reveal"><div class="tfoto"><img src="assets/team/sofia.jpg" alt="Sofia del team Unlike" loading="lazy" width="560" height="700"></div><figcaption><span class="trole">Rivede i tuoi contenuti</span><b>Sofia</b><p>È la consulente del tuo percorso: fa le call del mese, rivede i tuoi contenuti su Notion entro 24 ore lavorative e tiene le live di revisione il lunedì e il venerdì</p></figcaption></figure>
+      <figure class="tcard reveal"><div class="tfoto"><img src="assets/team/odaljs.jpg" alt="Odaljs del team Unlike" loading="lazy" width="560" height="700"></div><figcaption><span class="trole">Strategia e vendita</span><b>Odaljs</b><p>Fa la consulenza del percorso di un mese e, nel percorso per social media manager, la call su preventivi e vendita ai clienti</p></figcaption></figure>
+      <figure class="tcard reveal"><div class="tfoto"><img src="assets/team/emilia.jpg" alt="Emilia del team Unlike" loading="lazy" width="560" height="700"></div><figcaption><span class="trole">Visual identity</span><b>Emilia</b><p>Crea la visual identity e i template Canva per chi fa il percorso Professionista</p></figcaption></figure>
+    </div>
+    <p class="swipe-hint" aria-hidden="true">scorri per vedere tutto il team</p>
+    <p class="team-nota reveal">e la direzione resta sempre di Gemma</p>
+  </div>
+</section>
+
 <!-- PER CHI È -->
-<section class="sec bg-carta">
+<section class="sec bg-tenue">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">A chi è rivolto</div>
@@ -1265,7 +1320,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
     </div>
     <div class="steps5">
       <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Compili un breve questionario</h3><p style="color:rgba(255,255,255,.7)">Ci racconti la tua attività, gli obiettivi e cosa ti sta bloccando.</p></div>
-      <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Fissiamo la call</h3><p style="color:rgba(255,255,255,.7)">Una consulente del team ti scrive su WhatsApp. Se hai fretta, scegli tu giorno e ora dal calendario.</p></div>
+      <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Fissiamo la call</h3><p style="color:rgba(255,255,255,.7)">Katia, del team Unlike, ti scrive su WhatsApp. Se hai fretta, scegli tu giorno e ora dal calendario.</p></div>
       <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Il team analizza le informazioni</h3><p style="color:rgba(255,255,255,.7)">La call non parte da domande generiche, ma dalla tua situazione.</p></div>
       <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Individuiamo il blocco prioritario</h3><p style="color:rgba(255,255,255,.7)">Comprendiamo cosa sta rallentando la tua comunicazione e quale dovrebbe essere il prossimo passo.</p></div>
       <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Valutiamo la soluzione</h3><p style="color:rgba(255,255,255,.7)">Se un percorso è coerente con le tue esigenze te lo mostriamo. Quando non lo è, te lo diciamo.</p></div>
@@ -1287,7 +1342,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
       <div class="faq reveal">
       <details><summary>La consulenza è davvero gratuita?</summary><div class="fa"><p>Sì. La consulenza iniziale <b class="k">è gratuita</b> e serve a comprendere la tua situazione, individuare le priorità e valutare se esistono le condizioni per lavorare insieme.</p></div></details>
       <details><summary>Durante la consulenza cercherete di vendermi qualcosa?</summary><div class="fa"><p>Quando uno dei nostri percorsi è adatto alla tua situazione, ti spieghiamo come funziona e ti presentiamo la proposta. Non cerchiamo però di convincerti a tutti i costi. Se il percorso non è adatto, oppure non abbiamo le competenze specifiche per il tuo settore, <b class="k">te lo diciamo con trasparenza</b>.</p></div></details>
-      <details><summary>La consulenza sarà direttamente con Gemma?</summary><div class="fa"><p>La prima consulenza può essere svolta da un professionista del team formato per analizzare il progetto e comprendere le tue esigenze. Gemma supervisiona la direzione dei percorsi e partecipa direttamente alle attività strategiche previste dalla soluzione scelta.</p></div></details>
+      <details><summary>La consulenza sarà direttamente con Gemma?</summary><div class="fa"><p>La call conoscitiva la fai con Katia, del team Unlike, formata per analizzare il progetto e comprendere le tue esigenze. Gemma supervisiona la direzione dei percorsi e partecipa direttamente alle attività strategiche previste dalla soluzione scelta.</p></div></details>
       <details><summary>Posso partecipare anche se parto da zero?</summary><div class="fa"><p>Sì, purché tu abbia una competenza, un servizio o un progetto concreto da sviluppare. <b class="k">Il punto di partenza non è un problema.</b> Serve però disponibilità a lavorare, applicare e costruire.</p></div></details>
       <details><summary>Posso partecipare se ho già seguito altri corsi?</summary><div class="fa"><p>Sì. Molte delle persone che arrivano da noi hanno già acquistato corsi, consulenze o servizi. Il nostro lavoro non consiste nell'aggiungere altre informazioni, ma nel comprendere quali conoscenze siano realmente utili e come applicarle al tuo progetto.</p></div></details>
       <details><summary>Devo essere già attiva sui social?</summary><div class="fa"><p>Non necessariamente. Possiamo lavorare sia con chi deve iniziare, sia con chi pubblica già ma non sta ottenendo la risposta desiderata. La consulenza serve anche a comprendere il punto da cui è più corretto partire.</p></div></details>
@@ -1309,6 +1364,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
     <h2 class="reveal">Non ti serve fare tutto.<br>Ti serve iniziare dalle cose <mark>giuste</mark>.</h2>
     <p class="reveal">Puoi continuare a cercare il prossimo consiglio, salvare un altro prompt, provare un altro format. Oppure puoi fermarti un momento, analizzare ciò che stai facendo e <b class="s">costruire finalmente una direzione adatta alla tua attività</b>.</p>
     <button class="btn btn-white btn-lg reveal" data-open-form>Prenota la tua consulenza strategica gratuita</button>
+    <div class="reveal"><div class="con-katia"><img src="assets/team/katia-volto.jpg" alt="Katia del team Unlike" width="46" height="46"><span>La call conoscitiva la fai con <b>Katia</b>, del team Unlike</span></div></div>
     <p class="note reveal">Analizzeremo il tuo punto di partenza e valuteremo quale percorso possa essere realmente adatto a te. Nessun obbligo di acquisto.</p>
   </div>
 </section>
@@ -1330,7 +1386,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
     </div>
     <div class="ft-bottom">
       <span>© <span id="yr"></span> Unlike Academy · UNLIKE FZCO · Building A1, DSO, Dubai (UAE) · TRN 104228845400003</span>
-      <span>Website Creation by Alt Life Agency</span>
+      <span>Website Creation by Unlike Agency</span>
     </div>
   </div>
 </footer>
@@ -1369,6 +1425,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
     <button class="modal-x" id="modalX" aria-label="Chiudi">&times;</button>
     <h3 id="mTitle">Raccontaci brevemente il tuo progetto</h3>
     <p class="msub">Serve a farci arrivare alla call già preparate su di te: ogni risposta la legge una persona del team, che prima della call guarda anche i tuoi profili social. Ci vogliono 3 minuti</p>
+    <div class="con-katia"><img src="assets/team/katia-volto.jpg" alt="Katia del team Unlike" width="46" height="46"><span>Le tue risposte le legge <b>Katia</b>, che poi ti scrive su WhatsApp</span></div>
     <div class="ferr" id="ferr">Controlla i campi evidenziati e riprova</div>
     <form id="leadForm" novalidate>
       <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="website">Lascia vuoto</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
@@ -1569,12 +1626,13 @@ form.addEventListener('submit',async e=>{
   const nome=esc((data.nome||'').split(' ')[0]);
   form.outerHTML=`<div class="done"><div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>`+
     `<h3>Richiesta arrivata${nome?', '+nome:''}</h3>`+
-    `<p>Una consulente del team ti scrive su WhatsApp per fissare la videochiamata gratuita, dura circa 30 minuti</p>`+
+    `<div class="con-katia"><img src="assets/team/katia-volto.jpg" alt="Katia del team Unlike" width="46" height="46"><span><b>Katia</b> ti scrive su WhatsApp per fissare la videochiamata gratuita, dura circa 30 minuti</span></div>`+
     `<p><b>Hai fretta?</b> Puoi già scegliere tu giorno e ora</p>`+
     `<a class="btn btn-primary" href="${BOOKING_URL}" target="_blank" rel="noopener">Scegli giorno e ora</a>`+
     `<p class="small">Il calendario si apre in una nuova scheda</p></div>`;
   document.getElementById('ferr').remove();
   document.querySelector('.modal-card .msub').remove();
+  const ck=document.querySelector('.modal-card > .con-katia'); if(ck) ck.remove();
 });
 form.querySelectorAll('input').forEach(i=>i.addEventListener('input',()=>{i.classList.remove('err');const f=i.closest('.fset');if(f)f.classList.remove('err');}));
 function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}

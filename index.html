@@ -11,20 +11,22 @@
 <meta property="og:url" content="https://mentoring.unlikeacademy.it/">
 <meta property="og:image" content="https://mentoring.unlikeacademy.it/assets/img/gemma.jpg">
 <link rel="canonical" href="https://mentoring.unlikeacademy.it/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Gochi+Hand&display=swap" rel="stylesheet">
-<link rel="preload" href="assets/fonts/OpenSauceSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/OpenSauceSans-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/open-sauce-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/open-sauce-sans-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/texture/carta.jpg" as="image">
 <link rel="icon" type="image/png" href="assets/logo/favicon.png">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
 <style>
-@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/OpenSauceSans-Regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/OpenSauceSans-Medium.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/OpenSauceSans-SemiBold.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
-@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/OpenSauceSans-Bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/OpenSauceSans-ExtraBold.woff2) format('woff2');font-weight:800;font-style:normal;font-display:swap}
-@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/OpenSauceSans-Italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-400-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-500.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-700.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-800.woff2) format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Open Sauce Sans';src:url(assets/fonts/open-sauce-sans-900.woff2) format('woff2');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url(assets/fonts/playfair-display-normal-base.woff2) format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Playfair Display';src:url(assets/fonts/playfair-display-italic-base.woff2) format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:'Gochi Hand';src:url(assets/fonts/gochi-hand-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 /* colori e font dal sistema di Emilia (SISTEMA/Stile/brand.json + DESIGN.md): rosa = enfasi, blu = struttura,
    carta come sfondo, niente giallo e arancio, gradiente solo nel logo, mai nero puro */
@@ -466,6 +468,238 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 }
 
 @media (max-width:360px){ .pill{border-radius:16px} }
+/* =====================================================================
+   PELLE GRAFICA · sistema di Emilia
+   carta 162 (taratura brightness 1.12, multiply .80) · campi pieni colore/0.876 con grana in multiply
+   evidenziatore pieno sulla parola chiave · etichette-timbro · note a mano in Gochi
+   card bianche con rilievo blu · foto come polaroid con puntina · niente frecce, niente giallo
+   ===================================================================== */
+:root{--fucsia:#CD2471;--blu:#227CC0;--mano:'Gochi Hand',cursive;--rilievo:7px 8px 0 rgba(34,124,192,.30);--rilievo-f:7px 8px 0 rgba(205,36,113,.22);--ombra:0 18px 38px -20px rgba(59,54,56,.42)}
+body{background:#F3F2EE url(assets/texture/carta.jpg) center top/100% auto}
+header{background:rgba(243,242,238,.94)}
+.bg-carta{background:#F3F2EE url(assets/texture/carta.jpg) center/cover}
+.bg-tenue{background:url(assets/texture/grana-leggera.jpg) center/cover,linear-gradient(172deg,#FCEDF4 0%,#F5EEF6 50%,#EBF3FA 100%);background-blend-mode:multiply,normal}
+.bg-quaderno{background:url(assets/texture/grana-leggera.jpg) center/cover,linear-gradient(rgba(91,56,196,.075) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,rgba(91,56,196,.075) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(172deg,#FCEDF4 0%,#F5EEF6 50%,#EBF3FA 100%);background-blend-mode:multiply,normal,normal,normal}
+.bg-scuro{background:url(assets/texture/grana-leggera.jpg) center/cover,#544B4D;background-blend-mode:multiply,normal;color:#fff}
+.bg-fucsia{background:url(assets/texture/grana.jpg) center/cover,#EA2981;background-blend-mode:multiply,normal;color:#fff}
+.bg-blu{background:url(assets/texture/grana.jpg) center/cover,#268CD8;background-blend-mode:multiply,normal;color:#fff}
+.bg-scuro h2.sh,.bg-scuro h3,.bg-fucsia h2,.bg-fucsia h3,.bg-blu h2,.bg-blu h3{color:#fff}
+.bg-scuro .lead,.bg-fucsia .lead,.bg-scuro .prose p,.bg-fucsia .prose p{color:rgba(255,255,255,.9)!important}
+.bg-fucsia .prose strong{color:#fff}
+
+/* titoli fitti, interlinea stretta */
+h1,h2,h3,h4{letter-spacing:-.045em}
+h2.sh{font-weight:900;font-size:clamp(2.1rem,4.9vw,3.6rem);line-height:.98;letter-spacing:-.05em}
+h1.hero-h1{font-weight:900;font-size:clamp(2.35rem,5.3vw,4.1rem);line-height:.96;letter-spacing:-.052em}
+h2.sh em,.finalcta h2 em{font-weight:700;letter-spacing:-.035em}
+.bg-scuro h2.sh em{color:#F2C4DC}
+.bg-fucsia h2 em,.bg-blu h2 em{color:#fff}
+.lead{line-height:1.6}
+.prose p{line-height:1.7}
+
+/* evidenziatore pieno sulla parola chiave */
+mark{background:var(--fucsia);color:#fff;padding:0 .11em .04em;margin:0 .01em;border-radius:.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+mark.blu{background:var(--blu)}
+.bg-fucsia mark{background:#fff;color:var(--fucsia)}
+h1.hero-h1 mark{white-space:nowrap}
+h3 em{font-family:var(--serif);font-style:italic;font-weight:700;color:var(--fucsia);letter-spacing:-.02em}
+h1.hero-h1 u{text-decoration:none}
+h1.hero-h1 u::after{display:none}
+
+/* etichette-timbro al posto della riga col trattino */
+.eyebrow{display:inline-block;font-weight:800;font-size:12px;line-height:1;letter-spacing:.14em;text-transform:uppercase;color:#fff!important;background:var(--fucsia);padding:8px 11px 7px;border-radius:4px;rotate:-1.6deg;box-shadow:3px 3px 0 rgba(59,54,56,.16);margin-bottom:22px}
+.eyebrow::before{display:none}
+.eyebrow.c{display:table;margin-inline:auto}
+.eyebrow.blu,section:nth-of-type(4n+3) .eyebrow{background:var(--blu)}
+.bg-fucsia .eyebrow{background:#fff!important;color:var(--fucsia)!important}
+.guarantee .eyebrow{background:#fff!important;color:var(--blu)!important}
+.bg-scuro .eyebrow{background:var(--fucsia)!important}
+
+/* note a mano: un secondo livello di voce, si leggono da lontano */
+.hand{font-size:1.18em;letter-spacing:0}
+.hero-pre{font-family:var(--mano);font-weight:400;font-size:clamp(1.55rem,2.5vw,2rem);line-height:1;color:var(--blu);letter-spacing:0;rotate:-2deg;transform-origin:left center;margin-bottom:16px}
+.swipe-hint{font-size:21px}
+
+/* bottoni con rilievo, come le card */
+.btn-primary{box-shadow:4px 5px 0 rgba(34,124,192,.38)}
+.btn-primary:hover{box-shadow:6px 7px 0 rgba(34,124,192,.38);transform:translate(-1px,-2px)}
+.btn-white{box-shadow:4px 5px 0 rgba(59,54,56,.24);font-weight:800}
+.btn-white:hover{transform:translate(-1px,-2px)}
+
+/* etichetta in alto nella hero */
+.pill{background:var(--fucsia);color:#fff;border:none;border-radius:4px;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:8px 12px 7px;rotate:-1.6deg;box-shadow:3px 3px 0 rgba(59,54,56,.16)}
+.pill b{color:#fff;font-weight:800}
+
+/* hero: foto come polaroid con la puntina, i 500+ come adesivo */
+.hero-photo .blob{display:none}
+.hero-photo .frame{background:#fff;padding:12px;border-radius:6px;rotate:2.2deg;box-shadow:var(--ombra);overflow:visible;aspect-ratio:auto}
+.hero-photo .frame img{border-radius:3px;aspect-ratio:1/1;height:auto}
+.hero-photo .frame::before{content:'';position:absolute;top:-20px;left:50%;width:46px;height:46px;margin-left:-23px;background:url(assets/deco/puntina.png) center/contain no-repeat;z-index:3}
+.hero-badge{background:var(--fucsia);border-radius:5px;rotate:-5deg;box-shadow:5px 6px 0 rgba(59,54,56,.22);left:-26px;bottom:34px;padding:13px 17px}
+.hero-badge b{color:#fff;font-size:32px;font-weight:900;letter-spacing:-.04em}
+.hero-badge span{color:#fff;font-weight:700}
+
+/* striscia scura: i quattro punti come pillole */
+.strip ul{gap:10px}
+.strip li{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:7px 15px 7px 33px}
+.strip li::before{left:12px;top:10px;background:#F2C4DC}
+
+/* video: cornice bianca, come una foto appoggiata */
+.videobox{border:10px solid #fff;border-radius:14px;box-shadow:var(--ombra);rotate:-.6deg}
+
+/* citazioni: card piena con la puntina */
+.prose .q{position:relative;background:var(--blu);color:#fff;font-style:normal;font-weight:800;font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.2;letter-spacing:-.02em;padding:24px 28px;border:none;border-radius:6px;rotate:-1.2deg;box-shadow:6px 7px 0 rgba(59,54,56,.16);margin:1.6em 0 1.4em;max-width:560px}
+.prose .q::after{content:'';position:absolute;top:-20px;right:22px;width:42px;height:42px;background:url(assets/deco/puntina.png) center/contain no-repeat}
+.bg-fucsia .prose .q{background:#fff;color:var(--fucsia)}
+
+/* elenco "ogni professionista ha" come etichette sparse */
+ul.chips-list{display:flex;flex-wrap:wrap;gap:10px}
+ul.chips-list li{background:#fff;border-radius:100px;padding:9px 17px 9px 31px;box-shadow:0 8px 18px -12px rgba(59,54,56,.45);font-weight:600;color:var(--ink)}
+ul.chips-list li:nth-child(odd){rotate:-1deg}
+ul.chips-list li:nth-child(even){rotate:.8deg}
+ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
+
+/* metodo: card con rilievo blu, numeri in Playfair */
+.mcard{border:none;border-radius:14px;box-shadow:var(--rilievo);rotate:-.5deg}
+.mcard:nth-child(2){rotate:.45deg;box-shadow:var(--rilievo-f)}
+.mcard:hover{border:none;box-shadow:var(--rilievo);transform:translateY(-3px)}
+.mnum{font-size:3.6rem;font-weight:700}
+.proof-card{border:none;box-shadow:var(--rilievo);border-radius:14px}
+.proof-card:nth-child(2){box-shadow:var(--rilievo-f)}
+.shot{position:relative;border:none;border-radius:10px;padding-top:22px;background:#fff;box-shadow:0 12px 26px -14px rgba(59,54,56,.5)}
+.shot::before{content:'';position:absolute;left:0;right:0;top:0;height:22px;background:#F6F4F0;border-bottom:1px solid #EAE6DF;border-radius:10px 10px 0 0}
+.shot::after{content:'';position:absolute;left:11px;top:7px;width:8px;height:8px;border-radius:50%;background:#DCD7CF;box-shadow:13px 0 0 #DCD7CF,26px 0 0 #DCD7CF}
+.shots2 .shot{aspect-ratio:4/3.2}
+.shots2.tall .shot{aspect-ratio:3/4.2}
+.shots2 figure:nth-child(1) .shot{rotate:-1.2deg}
+.shots2 figure:nth-child(2) .shot{rotate:1.1deg}
+.proof-quote .shot{rotate:-.8deg}
+
+/* prima e dopo: due card inclinate, il dopo a campo pieno */
+.pd-card{border-radius:10px}
+.pd-prima{border:none;background:#fff;rotate:-1.2deg;box-shadow:var(--ombra)}
+.pd-dopo{background:url(assets/texture/grana.jpg) center/cover,#EA2981;background-blend-mode:multiply,normal;rotate:1deg;box-shadow:var(--rilievo)}
+.pd-card h3{font-size:1.7rem;font-weight:900}
+
+/* fasi: card con il timbro della fase, sfalsate */
+.fase{border:none;border-radius:12px;box-shadow:var(--ombra)}
+.fase:nth-child(even){margin-left:clamp(0px,4vw,48px)}
+.fase .fn{border-radius:4px;rotate:-2deg;box-shadow:3px 3px 0 rgba(59,54,56,.16)}
+.fase:nth-child(even) .fn{background:var(--blu)}
+
+/* casi studio: card bianche sul quaderno */
+.cs-card{border:none;border-radius:14px;box-shadow:var(--ombra)}
+.cs-card.feat{border:none;box-shadow:var(--rilievo)}
+.cs-card:hover{border:none}
+.cs-metric b{font-weight:900;font-size:1.55rem;letter-spacing:-.04em}
+.cs-metric b small{font-size:.58em;font-weight:700;color:var(--gray);letter-spacing:0;margin-right:.28em}
+.cs-metric b small:not(:first-child){margin-left:.12em}
+.av{border:3px solid #fff}
+.big-quote{position:relative}
+.big-quote p{font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.12;color:var(--ink)}
+.big-quote::before{content:'«';position:absolute;left:50%;top:-.62em;transform:translateX(-50%);font-family:var(--serif);font-style:italic;font-size:9rem;line-height:1;color:rgba(205,36,113,.16);pointer-events:none}
+
+/* videotestimonianze sul fondo scuro: cornice bianca, un po' storte */
+.vtile{border:6px solid #fff;border-radius:16px;box-shadow:0 18px 34px -18px rgba(34,29,32,.7)}
+.vtile:nth-child(odd){rotate:-1.2deg}
+.vtile:nth-child(even){rotate:1deg}
+
+/* muro dei messaggi: screenshot in finestra, card storte */
+.fbcard{border:none;border-radius:14px;box-shadow:var(--ombra)}
+.fbcard:nth-child(odd){rotate:-1.2deg}
+.fbcard:nth-child(even){rotate:1.1deg}
+.fb-shot{position:relative;border:none;padding-top:20px;background:#fff;box-shadow:inset 0 0 0 1px #EAE6DF}
+.fb-shot::before{content:'';position:absolute;left:0;right:0;top:0;height:20px;background:#F6F4F0;border-bottom:1px solid #EAE6DF;z-index:1}
+.fb-shot::after{content:'';position:absolute;left:10px;top:6px;width:7px;height:7px;border-radius:50%;background:#DCD7CF;box-shadow:12px 0 0 #DCD7CF,24px 0 0 #DCD7CF;z-index:2}
+.fbwall{padding-block:18px}
+
+/* Gemma: polaroid con la puntina */
+.gemma-photo{background:#fff;padding:12px;border-radius:6px;rotate:-2deg;box-shadow:var(--ombra);overflow:visible}
+.gemma-photo img{border-radius:3px}
+.gemma-photo::before{content:'';position:absolute;top:-20px;left:50%;width:46px;height:46px;margin-left:-23px;background:url(assets/deco/puntina.png) center/contain no-repeat;z-index:3}
+.gemma-ws{rotate:4deg;border-radius:6px}
+.gemma-ws figcaption b{font-size:1.5rem;font-weight:900}
+
+/* per chi è */
+.aud-si{border:none;box-shadow:var(--rilievo-f);border-radius:14px;rotate:-.6deg}
+.aud-no{background:#E9E6E0;border:none;border-radius:14px;rotate:.6deg}
+
+/* garanzia: campo pieno blu */
+.guarantee{background:url(assets/texture/grana.jpg) center/cover,#268CD8;background-blend-mode:multiply,normal;border-radius:14px;rotate:-.4deg;box-shadow:7px 8px 0 rgba(59,54,56,.16)}
+
+/* cosa succede dopo: numeri in Playfair */
+.step5{border-radius:12px}
+.step5::before{position:static;display:block;margin-bottom:8px;font-family:var(--serif);font-style:italic;font-weight:700;font-size:2.8rem;color:#F2C4DC;line-height:.9}
+.step5 h3{max-width:none}
+
+/* domande frequenti */
+.faq details{border:none;border-radius:12px;box-shadow:0 10px 24px -16px rgba(59,54,56,.4)}
+
+/* chiusura a campo pieno fucsia */
+.finalcta p{color:rgba(255,255,255,.92)}
+.finalcta .note{color:rgba(255,255,255,.78)}
+.finalcta h2{font-weight:900;letter-spacing:-.05em;line-height:.98}
+
+@media (max-width:900px){
+  .hero-badge{left:-8px;bottom:22px}
+  .fase:nth-child(even){margin-left:0}
+}
+@media (max-width:640px){
+  .hero-photo .frame{rotate:1.5deg}
+  .cs-card,.cs-card.feat{rotate:0deg}
+  .vtile:nth-child(odd),.vtile:nth-child(even){rotate:0deg}
+  .big-quote::before{font-size:6.5rem}
+}
+@media (prefers-reduced-motion:reduce){.mcard:hover{transform:none}}
+
+/* ---- evidenziatore DIETRO al testo: le righe vicine restano sopra e si leggono ---- */
+h1.hero-h1,h2.sh,.finalcta h2,h3{isolation:isolate}
+mark{position:relative;background:none!important;padding:0 .08em;margin:0 .02em;white-space:nowrap;color:#fff}
+mark::before{content:'';position:absolute;z-index:-1;left:-.06em;right:-.06em;top:.1em;bottom:.02em;background:var(--fucsia);border-radius:.05em}
+mark.blu::before{background:var(--blu)}
+.bg-fucsia mark{color:var(--fucsia)}
+.bg-fucsia mark::before{background:#fff}
+
+/* ---- contrasti: niente testo bianco su card bianche ---- */
+.bg-fucsia .prose .q{color:var(--fucsia)!important}
+.band-ink.bg-fucsia h2.sh em{color:#fff}
+:root{--gray:#665E61}
+span.av{background:var(--fucsia)!important;color:#fff!important}
+.fb-who span.av{color:#fff}
+.bg-scuro .k{color:#F2C4DC}
+
+/* ---- parole chiave nei testi: fucsia, oppure sottolineatura a mano blu ---- */
+.k{font-weight:700;color:var(--fucsia)}
+.s{font-weight:700;color:var(--ink);padding-bottom:.1em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:no-repeat left bottom/100% .38em url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C40 4 80 10.5 120 6S176 4 198 7.5' fill='none' stroke='%23227CC0' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")}
+.bg-fucsia .k,.guarantee .k,.bg-fucsia .s,.guarantee .s{color:#fff}
+.bg-fucsia .s,.guarantee .s{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C40 4 80 10.5 120 6S176 4 198 7.5' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")}
+.prose p,.lead,.hero-sub,.mcard p,.fase p,.faq .fa{color:var(--body)}
+.prose strong{color:var(--ink)}
+
+/* ---- PC: sezioni su due colonne invece che incolonnate al centro ---- */
+.split{width:min(1180px,92vw);margin-inline:auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:clamp(40px,6vw,96px);align-items:start}
+.split-l{position:sticky;top:104px}
+.split-l h2.sh{font-size:clamp(2.1rem,4.2vw,3.4rem)}
+.split-r>:first-child{margin-top:0!important}
+.split-l .eyebrow.c{display:inline-block;margin-inline:0}
+.split-l .center,.split-l h2.center{text-align:left}
+.wide{width:min(1120px,92vw);margin-inline:auto}
+.narrow-video{width:min(1000px,92vw);margin-inline:auto}
+.finalcta .narrow{width:min(900px,92vw)}
+@media (min-width:1000px){
+  .method{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:26px}
+  .method .mcard{grid-template-columns:1fr;gap:10px;padding:30px 28px}
+  .fasi{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:44px}
+  .fase{flex:0 1 calc((100% - 44px)/3);grid-template-columns:1fr;gap:12px;align-content:start}
+  .fase:nth-child(even){margin-left:0;translate:0 18px}
+  .pd{gap:34px}
+  .faq{margin-top:0}
+}
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .split-l{position:static}
+}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -499,15 +733,15 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </header>
 
 <!-- HERO -->
-<section class="hero" id="top">
+<section class="hero bg-tenue" id="top">
   <div class="wrap hero-grid">
     <div class="hero-left">
       <span class="pill">Consulenza strategica <b>gratuita</b> · Mentoring</span>
       <h1 class="hero-h1">
         <span class="hero-pre">Non ti serve un altro corso sui social.</span>
-        Ti serve capire perché quello che stai facendo non porta le <u>persone giuste</u> a sceglierti.
+        Ti serve capire perché quello che stai facendo non porta le <mark>persone giuste</mark> a sceglierti.
       </h1>
-      <p class="hero-sub">Durante la nostra consulenza strategica gratuita analizziamo la tua situazione, individuiamo ciò che sta bloccando la tua comunicazione e valutiamo quale percorso possa essere più adatto al tuo mercato, ai tuoi obiettivi e al tuo punto di partenza.</p>
+      <p class="hero-sub">Durante la nostra consulenza strategica gratuita analizziamo la tua situazione, individuiamo <b class="k">ciò che sta bloccando la tua comunicazione</b> e valutiamo quale percorso possa essere più adatto al tuo mercato, ai tuoi obiettivi e al tuo punto di partenza.</p>
       <div class="hero-cta">
         <button class="btn btn-primary btn-lg" data-open-form>Prenota la consulenza strategica gratuita</button>
       </div>
@@ -522,7 +756,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- STRIP -->
-<section class="strip">
+<section class="strip bg-scuro">
   <div class="wrap strip-in">
     <h3>Non promettiamo formule magiche.</h3>
     <span style="color:rgba(255,255,255,.6);font-weight:600">Ti aiutiamo a costruire una comunicazione che faccia capire:</span>
@@ -533,13 +767,13 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- VIDEO -->
-<section class="sec">
+<section class="sec bg-carta">
   <div class="narrow center">
     <div class="eyebrow c reveal">Guarda prima questo</div>
-    <h2 class="sh reveal">Prima di acquistare un altro percorso, guarda questo <em>video.</em></h2>
-    <p class="lead reveal" style="margin-top:16px;color:var(--gray)">In pochi minuti ti spiego perché molti corsi ti lasciano piena di informazioni ma senza una direzione, e cosa dovrebbe offrirti davvero un percorso di mentoring.</p>
+    <h2 class="sh reveal">Prima di acquistare un altro percorso, guarda questo <mark>video</mark>.</h2>
+    <p class="lead reveal" style="margin-top:16px;color:var(--gray)">In pochi minuti ti spiego perché molti corsi ti lasciano <b class="s">piena di informazioni ma senza una direzione</b>, e cosa dovrebbe offrirti davvero un percorso di mentoring.</p>
   </div>
-  <div class="narrow reveal">
+  <div class="narrow-video reveal">
     <div class="videobox has-video" id="videoBox">
       <img class="vposter" src="assets/video/posters/vsl-mentorship.jpg" alt="Video di presentazione Mentorship Gemma Lenoci" loading="lazy">
       <div class="in">
@@ -555,29 +789,34 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- RISPECCHIAMENTO -->
-<section class="sec band-off">
-  <div class="narrow">
-    <div class="eyebrow reveal">Ti riconosci?</div>
-    <h2 class="sh reveal">Probabilmente non sei arrivata qui perché non sai nulla di <em>social.</em></h2>
-    <div class="prose reveal" style="margin-top:22px">
-      <p>Sei arrivata qui perché sai già abbastanza da renderti conto che qualcosa non sta funzionando.</p>
-      <p>Magari hai acquistato un videocorso che hai seguito solo a metà. Hai provato a creare un piano editoriale, ma dopo qualche settimana hai iniziato di nuovo a pubblicare senza una vera logica. Hai salvato decine di hook, prompt, format e consigli che sembravano perfetti, ma quando li hai applicati alla tua attività non hai ottenuto lo stesso risultato.</p>
-      <p>Forse ti sei affidata a un'agenzia o a un social media manager, ma non ti riconoscevi nei contenuti che venivano pubblicati. Oppure pubblichi con costanza, ricevi qualche visualizzazione e qualche complimento, ma le richieste realmente interessanti continuano ad arrivare poco o per niente.</p>
+<section class="sec bg-tenue">
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Ti riconosci?</div>
+      <h2 class="sh reveal">Probabilmente non sei arrivata qui perché non sai nulla di <em>social.</em></h2>
+    </div>
+    <div class="split-r">
+      <div class="prose reveal" style="margin-top:22px">
+      <p>Sei arrivata qui perché sai già abbastanza da renderti conto che <b class="k">qualcosa non sta funzionando</b>.</p>
+      <p>Magari hai acquistato un videocorso che hai seguito solo a metà. Hai provato a creare un piano editoriale, ma dopo qualche settimana hai iniziato di nuovo a <b class="k">pubblicare senza una vera logica</b>. Hai salvato decine di hook, prompt, format e consigli che sembravano perfetti, ma quando li hai applicati alla tua attività <b class="s">non hai ottenuto lo stesso risultato</b>.</p>
+      <p>Forse ti sei affidata a un'agenzia o a un social media manager, ma non ti riconoscevi nei contenuti che venivano pubblicati. Oppure pubblichi con costanza, ricevi qualche visualizzazione e qualche complimento, ma <b class="k">le richieste realmente interessanti</b> continuano ad arrivare poco o per niente.</p>
       <p class="q">"Il problema sono io, il mio settore, la mia offerta oppure l'algoritmo?"</p>
       <p>La risposta è che, molto spesso, il problema non è nessuna di queste cose presa singolarmente. <strong>Il problema è che manca una strategia costruita intorno alla tua situazione reale.</strong></p>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- RIMOZIONE SENSO DI COLPA -->
-<section class="sec">
-  <div class="narrow">
-    <div class="eyebrow reveal">Non è colpa tua</div>
-    <h2 class="sh reveal">Non sei tu che non ti sei <em>impegnata</em> abbastanza.</h2>
-    <div class="prose reveal" style="margin-top:22px">
-      <p>Hai semplicemente provato ad applicare indicazioni generiche a un business che generico non è. Ogni professionista ha:</p>
+<section class="sec bg-carta">
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Non è colpa tua</div>
+      <h2 class="sh reveal">Non sei tu che non ti sei <mark class="blu">impegnata</mark> abbastanza.</h2>
+      <div class="prose reveal" style="margin-top:22px">
+      <p>Hai semplicemente provato ad applicare <b class="k">indicazioni generiche</b> a un business che <b class="s">generico non è</b>. Ogni professionista ha:</p>
     </div>
-    <ul class="plain reveal" style="margin-top:8px">
+      <ul class="plain chips-list reveal" style="margin-top:12px">
       <li>un mercato differente;</li>
       <li>un livello di autorevolezza differente;</li>
       <li>un'offerta differente;</li>
@@ -585,56 +824,63 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
       <li>un modo diverso di comunicare;</li>
       <li>risorse, tempo e obiettivi differenti.</li>
     </ul>
-    <div class="prose reveal" style="margin-top:20px">
-      <p>Eppure, la maggior parte dei percorsi propone a tutte lo stesso sistema: gli stessi video, gli stessi esercizi, gli stessi calendari editoriali, gli stessi prompt, gli stessi consigli sulla viralità.</p>
-      <p>Il risultato? Sai molte cose, ma non sai quali siano quelle giuste da applicare adesso.</p>
     </div>
-    <h3 class="reveal" style="font-size:clamp(1.4rem,2.6vw,2rem);margin-top:30px">Non ti manca un'altra informazione.</h3>
-    <div class="prose reveal" style="margin-top:12px">
-      <p>Ti manca qualcuno che sappia osservare il tuo caso, individuare le priorità e correggere ciò che stai facendo mentre lo stai facendo.</p>
+    <div class="split-r">
+      <div class="prose reveal" style="margin-top:20px">
+      <p>Eppure, la maggior parte dei percorsi propone a tutte <b class="k">lo stesso sistema</b>: gli stessi video, gli stessi esercizi, gli stessi calendari editoriali, gli stessi prompt, gli stessi consigli sulla viralità.</p>
+      <p>Il risultato? Sai molte cose, ma <b class="s">non sai quali siano quelle giuste da applicare adesso</b>.</p>
     </div>
-    <div class="reveal" style="margin-top:24px"><button class="btn btn-primary btn-lg" data-open-form>Voglio capire cosa sta bloccando la mia comunicazione</button></div>
+      <h3 class="reveal" style="font-size:clamp(1.4rem,2.6vw,2rem);margin-top:30px">Non ti manca un'altra <em>informazione</em>.</h3>
+      <div class="prose reveal" style="margin-top:12px">
+      <p>Ti manca qualcuno che sappia osservare il tuo caso, individuare le priorità e <b class="k">correggere ciò che stai facendo mentre lo stai facendo</b>.</p>
+    </div>
+      <div class="reveal" style="margin-top:24px"><button class="btn btn-primary btn-lg" data-open-form>Voglio capire cosa sta bloccando la mia comunicazione</button></div>
+    </div>
   </div>
 </section>
 
 <!-- CAMBIO DI PARADIGMA -->
-<section class="sec band-ink">
-  <div class="narrow">
-    <div class="eyebrow reveal">Il cambio di paradigma</div>
-    <h2 class="sh reveal">L'algoritmo non compra i tuoi servizi.<br>Le <em>persone</em> sì.</h2>
-    <div class="prose reveal" style="margin-top:22px">
-      <p>Per molto tempo ti hanno insegnato a creare contenuti per ottenere più visualizzazioni, più interazioni e più follower. Ma un contenuto può diventare virale e non portarti nemmeno una richiesta.</p>
-      <p>Può essere visto da centomila persone che non hanno alcun bisogno del tuo servizio, oppure da duemila persone tra cui si trovano quattro potenziali clienti. Quale dei due contenuti ha funzionato davvero?</p>
-      <p>Noi non partiamo dal contenuto che potrebbe piacere a tutti. Partiamo dalla persona che dovrebbe guardarlo e pensare:</p>
-      <p class="q" style="border-color:var(--rosa-scuro-bg);color:#fff">"Sta parlando esattamente di me."</p>
+<section class="sec band-ink bg-fucsia">
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Il cambio di paradigma</div>
+      <h2 class="sh reveal">L'algoritmo non compra i tuoi servizi.<br>Le <em>persone</em> sì.</h2>
     </div>
-    <h3 class="reveal" style="font-size:clamp(1.5rem,2.8vw,2.1rem);margin-top:28px;color:#fff">Il tuo obiettivo è diventare rilevante per le <span class="hand" style="color:var(--rosa-scuro-bg);font-size:1.15em">persone giuste.</span></h3>
-    <div class="prose reveal" style="margin-top:16px">
-      <p>Quando il contenuto è costruito intorno al tuo cliente, anche l'algoritmo ha più possibilità di capire a chi mostrarlo. Ma la partita non si vince inseguendo continuamente nuovi trend. Si vince sapendo a chi stai parlando, che cosa quella persona sta vivendo, che cosa le impedisce di scegliere e quale messaggio può farla fermare, fidare e agire.</p>
+    <div class="split-r">
+      <div class="prose reveal" style="margin-top:22px">
+      <p>Per molto tempo ti hanno insegnato a creare contenuti per ottenere più visualizzazioni, più interazioni e più follower. <b class="s">Ma un contenuto può diventare virale e non portarti nemmeno una richiesta.</b></p>
+      <p>Può essere visto da centomila persone che non hanno alcun bisogno del tuo servizio, oppure da duemila persone tra cui si trovano quattro potenziali clienti. <b class="k">Quale dei due contenuti ha funzionato davvero?</b></p>
+      <p>Noi non partiamo dal contenuto che potrebbe piacere a tutti. Partiamo dalla persona che dovrebbe guardarlo e pensare:</p>
+      <p class="q">"Sta parlando esattamente di me."</p>
+    </div>
+      <h3 class="reveal" style="font-size:clamp(1.5rem,2.8vw,2.1rem);margin-top:28px;color:#fff">Il tuo obiettivo è diventare rilevante per le <span class="hand" style="color:#fff;font-size:1.25em">persone giuste.</span></h3>
+      <div class="prose reveal" style="margin-top:16px">
+      <p>Quando il contenuto è costruito intorno al tuo cliente, anche l'algoritmo ha più possibilità di capire a chi mostrarlo. Ma la partita non si vince inseguendo continuamente nuovi trend. <b class="s">Si vince sapendo a chi stai parlando</b>, che cosa quella persona sta vivendo, che cosa le impedisce di scegliere e quale messaggio può farla fermare, fidare e agire.</p>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- IL METODO -->
-<section class="sec">
+<section class="sec bg-carta">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Il nostro metodo</div>
       <h2 class="sh">I tre elementi che trasformano la formazione in <em>applicazione</em></h2>
-      <p class="lead" style="margin-top:16px;color:var(--gray)">Non abbiamo costruito i nostri percorsi chiedendoci quanti moduli inserire per farli sembrare più ricchi. Ci siamo chiesti di cosa ha realmente bisogno una professionista per trasformare i social in uno strumento di posizionamento e acquisizione.</p>
+      <p class="lead" style="margin-top:16px;color:var(--gray)">Non abbiamo costruito i nostri percorsi chiedendoci quanti moduli inserire per farli sembrare più ricchi. Ci siamo chiesti <b class="k">di cosa ha realmente bisogno una professionista</b> per trasformare i social in uno strumento di posizionamento e acquisizione.</p>
     </div>
     <div class="method">
       <div class="mcard reveal"><div class="mnum">01</div><div>
         <h3>Contenuti costruiti sulle persone giuste</h3>
-        <p>Non ti consegniamo una lista di idee da pubblicare. Ti aiutiamo a capire quali temi interessano davvero il tuo pubblico, quali problemi fanno riconoscere la persona giusta, quali messaggi costruiscono autorevolezza e come differenziarti da chi propone servizi simili. Non devi pubblicare tutto: devi pubblicare ciò che aiuta il tuo cliente a comprendere il problema, fidarsi della tua competenza e avvicinarsi alla tua offerta.</p>
+        <p>Non ti consegniamo una lista di idee da pubblicare. Ti aiutiamo a capire <b class="s">quali temi interessano davvero il tuo pubblico</b>, quali problemi fanno riconoscere la persona giusta, quali messaggi costruiscono autorevolezza e come differenziarti da chi propone servizi simili. Non devi pubblicare tutto: <b class="k">devi pubblicare ciò che aiuta il tuo cliente</b> a comprendere il problema, fidarsi della tua competenza e avvicinarsi alla tua offerta.</p>
       </div></div>
       <div class="mcard reveal"><div class="mnum">02</div><div>
         <h3>Psicologia della decisione applicata al marketing</h3>
-        <p>Il marketing non è soltanto estetica, trend e creatività. È comprensione delle persone. Lavoriamo sui principi della psicologia della decisione e della neuroscienza applicata alla comunicazione: perché una persona si ferma su un contenuto, cosa la fa sentire compresa, come si costruisce fiducia nel tempo e come accompagnare il pubblico dalla curiosità alla decisione. Anche l'intelligenza artificiale entra nel percorso, ma per analizzare meglio il mercato e velocizzare il lavoro, senza togliere identità alla tua comunicazione.</p>
+        <p>Il marketing non è soltanto estetica, trend e creatività. <b class="k">È comprensione delle persone.</b> Lavoriamo sui principi della psicologia della decisione e della neuroscienza applicata alla comunicazione: <b class="s">perché una persona si ferma su un contenuto</b>, cosa la fa sentire compresa, come si costruisce fiducia nel tempo e come accompagnare il pubblico dalla curiosità alla decisione. Anche l'intelligenza artificiale entra nel percorso, ma per analizzare meglio il mercato e velocizzare il lavoro, senza togliere identità alla tua comunicazione.</p>
       </div></div>
       <div class="mcard reveal"><div class="mnum">03</div><div>
         <h3>Assistenza, revisione e correzione</h3>
-        <p>Questa è la parte che, per noi, fa realmente la differenza. Non ricevi soltanto indicazioni teoriche. Ricevi confronto, feedback, correzioni e una direzione. Le persone che ti seguono lavorano ogni giorno anche su progetti e clienti reali. Gemma supervisiona la direzione, revisiona il percorso e partecipa direttamente alle attività previste. <strong>Non vieni lasciata sola dopo averti spiegato cosa fare.</strong></p>
+        <p>Questa è la parte che, per noi, fa realmente la differenza. Non ricevi soltanto indicazioni teoriche. <b class="k">Ricevi confronto, feedback, correzioni e una direzione.</b> Le persone che ti seguono lavorano ogni giorno anche su progetti e clienti reali. Gemma supervisiona la direzione, revisiona il percorso e partecipa direttamente alle attività previste. <strong>Non vieni lasciata sola dopo averti spiegato cosa fare.</strong></p>
       </div></div>
     </div>
     <div class="proof">
@@ -661,13 +907,17 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- TRASFORMAZIONE -->
-<section class="sec band-pink">
-  <div class="narrow">
-    <div class="eyebrow reveal">La trasformazione</div>
-    <h2 class="sh reveal">Da contenuti pubblicati a caso a una comunicazione che segue una <em>direzione.</em></h2>
-    <p class="lead reveal" style="margin-top:16px;color:var(--body)">Il percorso non serve a renderti dipendente da noi. Serve a costruire in te maggiore chiarezza e autonomia.</p>
+<section class="sec bg-tenue">
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">La trasformazione</div>
+      <h2 class="sh reveal">Da contenuti pubblicati a caso a una comunicazione che segue una <mark>direzione</mark>.</h2>
+    </div>
+    <div class="split-r">
+      <p class="lead reveal" style="margin-top:16px;color:var(--body)">Il percorso non serve a renderti dipendente da noi. Serve a costruire in te <b class="k">maggiore chiarezza e autonomia</b>.</p>
+    </div>
   </div>
-  <div class="narrow">
+  <div class="wide">
     <div class="pd">
       <div class="pd-card pd-prima reveal">
         <h3>Prima</h3>
@@ -701,28 +951,28 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- FASI -->
-<section class="sec">
-  <div class="narrow">
+<section class="sec bg-carta">
+  <div class="wrap">
     <div class="eyebrow reveal">Come funziona il mentoring</div>
-    <h2 class="sh reveal">Non entri in una piattaforma e vieni lasciata da <em>sola.</em></h2>
+    <h2 class="sh reveal" style="max-width:820px">Non entri in una piattaforma e vieni lasciata da <em>sola.</em></h2>
     <p class="lead reveal" style="margin-top:14px;color:var(--gray)">Il lavoro segue un processo preciso, in cinque fasi.</p>
     <div class="fasi">
-      <div class="fase reveal"><span class="fn">Fase 1</span><div><h3>Analisi</h3><p>Studiamo il tuo progetto, il tuo mercato, il pubblico, il posizionamento, l'offerta e la comunicazione attuale. Prima di dirti cosa pubblicare dobbiamo comprendere cosa vuoi costruire.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 2</span><div><h3>Direzione</h3><p>Definiamo le priorità strategiche. Comprendiamo quali messaggi devono essere associati al tuo nome, quali contenuti possono attirare il pubblico corretto e come presentare meglio la tua competenza.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 3</span><div><h3>Applicazione</h3><p>Trasformi la strategia in contenuti, attività e decisioni reali. Non lavori su esercizi teorici scollegati dal tuo progetto: lavori direttamente sulla tua comunicazione.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 4</span><div><h3>Revisione</h3><p>Analizziamo ciò che hai prodotto. Individuiamo cosa funziona, cosa è poco chiaro e cosa deve essere corretto. Il feedback ti permette di migliorare più velocemente e di evitare di ripetere gli stessi errori.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 5</span><div><h3>Ottimizzazione</h3><p>Osserviamo le risposte del mercato e adattiamo il lavoro. Perché una strategia non deve essere semplicemente bella sulla carta: deve funzionare nel mondo reale.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 1</span><div><h3>Analisi</h3><p>Studiamo il tuo progetto, il tuo mercato, il pubblico, il posizionamento, l'offerta e la comunicazione attuale. Prima di dirti cosa pubblicare dobbiamo <b class="k">comprendere cosa vuoi costruire</b>.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 2</span><div><h3>Direzione</h3><p>Definiamo le priorità strategiche. Comprendiamo <b class="k">quali messaggi devono essere associati al tuo nome</b>, quali contenuti possono attirare il pubblico corretto e come presentare meglio la tua competenza.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 3</span><div><h3>Applicazione</h3><p>Trasformi la strategia in contenuti, attività e decisioni reali. Non lavori su esercizi teorici scollegati dal tuo progetto: <b class="k">lavori direttamente sulla tua comunicazione</b>.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 4</span><div><h3>Revisione</h3><p>Analizziamo ciò che hai prodotto. Individuiamo cosa funziona, cosa è poco chiaro e cosa deve essere corretto. Il feedback ti permette di <b class="k">migliorare più velocemente</b> e di evitare di ripetere gli stessi errori.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 5</span><div><h3>Ottimizzazione</h3><p>Osserviamo le risposte del mercato e adattiamo il lavoro. Perché una strategia non deve essere semplicemente bella sulla carta: <b class="k">deve funzionare nel mondo reale</b>.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- PROVA SOCIALE / CASI STUDIO -->
-<section class="sec band-off">
+<section class="sec bg-quaderno">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Alcuni casi studio</div>
-      <h2 class="sh">Non partiamo dalle teorie. Partiamo da ciò che abbiamo visto <em>accadere.</em></h2>
-      <p class="lead" style="margin-top:16px;color:var(--gray)">Abbiamo lavorato con professioniste e imprenditori in situazioni molto differenti. Le strategie utilizzate non sono state identiche, perché identici non erano i loro mercati, i loro obiettivi e i loro punti di partenza.</p>
+      <h2 class="sh">Non partiamo dalle teorie. Partiamo da ciò che abbiamo visto <mark class="blu">accadere</mark>.</h2>
+      <p class="lead" style="margin-top:16px;color:var(--gray)">Abbiamo lavorato con professioniste e imprenditori in situazioni molto differenti. Le strategie utilizzate non sono state identiche, perché <b class="s">identici non erano i loro mercati, i loro obiettivi e i loro punti di partenza</b>.</p>
     </div>
     <div class="cs-grid">
       <!-- 00 Sara Orsini (mentoring, feat + video) -->
@@ -732,7 +982,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <button class="cs-vthumb" data-video="sara-orsini-storia-1" aria-label="Guarda il video di Sara Orsini"><img src="assets/video/posters/sara-orsini-storia-1.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 28" width="14" height="16" fill="#CD2471" aria-hidden="true"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><span class="vl">Video</span></button>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>40€ → 200€</b><span>a consulenza</span></div>
+          <div class="cs-metric"><b><small>da</small>40€ <small>a</small>200€</b><span>a consulenza</span></div>
           <div class="cs-metric"><b>4 contro 2</b><span>consulenze in 3 mesi, contro tutto l'anno prima</span></div>
           <div class="cs-metric"><b>14.000€</b><span>un solo viaggio venduto</span></div>
         </div>
@@ -742,12 +992,12 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
       <!-- 01 Vanessa (feat + video) -->
       <div class="cs-card feat reveal">
         <div class="cs-top">
-          <div class="cs-who"><img class="av" src="assets/volti/vanessa-lacalamita.jpg" alt="" width="48" height="48" loading="lazy"><div><div class="cs-niche">Onicotecnica → Formatrice</div><div class="cs-name">Vanessa Lacalamita</div></div></div>
+          <div class="cs-who"><img class="av" src="assets/volti/vanessa-lacalamita.jpg" alt="" width="48" height="48" loading="lazy"><div><div class="cs-niche">Onicotecnica e formatrice</div><div class="cs-name">Vanessa Lacalamita</div></div></div>
           <button class="cs-vthumb" data-video="vanessa-lacalamita" aria-label="Guarda il video di Vanessa Lacalamita"><img src="assets/video/posters/vanessa-lacalamita.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 28" width="14" height="16" fill="#CD2471" aria-hidden="true"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><span class="vl">Video</span></button>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>51 → 10.000</b><span>follower TikTok</span></div>
-          <div class="cs-metric"><b>19€ → 600€</b><span>dal servizio unghie ai corsi</span></div>
+          <div class="cs-metric"><b><small>da</small>51 <small>a</small>10.000</b><span>follower TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>19€ <small>a</small>600€</b><span>dal servizio unghie ai corsi</span></div>
           <div class="cs-metric"><b>50 · 3</b><span>corsiste · edizioni sold out</span></div>
         </div>
         <p class="cs-note">Da chi applicava unghie a <em>formatrice con corsi sold out</em>: oggi insegna il suo metodo alle allieve</p>
@@ -760,7 +1010,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <button class="cs-vthumb" data-video="veronica-biraghi" aria-label="Guarda il video di Veronica Biraghi"><img src="assets/video/posters/veronica-biraghi.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 28" width="14" height="16" fill="#CD2471" aria-hidden="true"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><span class="vl">Video</span></button>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>0 → 28K + 51K</b><span>follower IG + TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>0 <small>a</small>28K + 51K</b><span>follower IG + TikTok</span></div>
           <div class="cs-metric"><b>1M+</b><span>visualizzazioni</span></div>
           <div class="cs-metric"><b>7.000€/mese</b><span>col brand Diamanta</span></div>
         </div>
@@ -773,7 +1023,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <div class="cs-who"><span class="av" aria-hidden="true">AC</span><div><div class="cs-niche">Addestratrice cinofila</div><div class="cs-name">Asya Cadei</div></div></div>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>0 → 55K + 41K</b><span>follower IG + TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>0 <small>a</small>55K + 41K</b><span>follower IG + TikTok</span></div>
           <div class="cs-metric"><b>500K+</b><span>views col format “Razze Senza Filtri”</span></div>
         </div>
         <p class="cs-note">Dal nulla a un format riconoscibile, fino a una <em>comparsa in TV nazionale</em></p>
@@ -786,7 +1036,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <button class="cs-vthumb" data-video="wonder-ibiza" aria-label="Guarda il video di Sara"><img src="assets/video/posters/wonder-ibiza.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 28" width="14" height="16" fill="#CD2471" aria-hidden="true"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><span class="vl">Video</span></button>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>8,5K → 20K</b><span>follower in 6 mesi</span></div>
+          <div class="cs-metric"><b><small>da</small>8,5K <small>a</small>20K</b><span>follower in 6 mesi</span></div>
           <div class="cs-metric"><b>+17.000%</b><span>visualizzazioni</span></div>
           <div class="cs-metric"><b>12</b><span>consulenze prenotate in 1 giorno</span></div>
         </div>
@@ -799,7 +1049,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <div class="cs-who"><span class="av" aria-hidden="true">GL</span><div><div class="cs-niche">Face yoga</div><div class="cs-name">Giulia Lupetti</div></div></div>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>0 → 43K</b><span>follower TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>0 <small>a</small>43K</b><span>follower TikTok</span></div>
           <div class="cs-metric"><b>500K+</b><span>views · +30 corsi venduti</span></div>
         </div>
         <p class="cs-note">Nuova nicchia da zero: video virali e <em>primi corsi venduti</em> in pochi mesi</p>
@@ -812,7 +1062,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <button class="cs-vthumb" data-video="serena-tolotta" aria-label="Guarda il video di Serena Tolotta"><img src="assets/video/posters/serena-tolotta.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 28" width="14" height="16" fill="#CD2471" aria-hidden="true"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><span class="vl">Video</span></button>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>253 → 45K + 113K</b><span>follower IG + TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>253 <small>a</small>45K + 113K</b><span>follower IG + TikTok</span></div>
           <div class="cs-metric"><b>Oggi</b><span>vive di prodotti digitali</span></div>
         </div>
         <p class="cs-note">Da poche centinaia di follower a <em>vivere della propria attività online</em></p>
@@ -825,7 +1075,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <button class="cs-vthumb" data-video="naomi-di-costanzo" aria-label="Guarda il video di Naomi Di Costanzo"><img src="assets/video/posters/naomi-di-costanzo.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 28" width="14" height="16" fill="#CD2471" aria-hidden="true"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><span class="vl">Video</span></button>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>334 → 7.977</b><span>follower</span></div>
+          <div class="cs-metric"><b><small>da</small>334 <small>a</small>7.977</b><span>follower</span></div>
           <div class="cs-metric"><b>Prenotazioni</b><span>dai social, citati su TripAdvisor</span></div>
         </div>
         <p class="cs-note">La Cantina U’Scilatur riempie i tavoli <em>grazie ai contenuti</em></p>
@@ -837,7 +1087,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
           <div class="cs-who"><img class="av" src="assets/volti/elettra-lazzerini.jpg" alt="" width="48" height="48" loading="lazy"><div><div class="cs-niche">Hospitality · Toscana</div><div class="cs-name">Elettra Lazzerini</div></div></div>
         </div>
         <div class="cs-metrics">
-          <div class="cs-metric"><b>46K → 72K</b><span>follower TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>46K <small>a</small>72K</b><span>follower TikTok</span></div>
           <div class="cs-metric"><b>2,4M</b><span>like totali</span></div>
         </div>
         <p class="cs-note">Da “virale ma non converte” ad <em>autorità riconosciuta nella sua nicchia</em></p>
@@ -850,7 +1100,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
         </div>
         <div class="cs-metrics">
           <div class="cs-metric"><b>~1M</b><span>visualizzazioni Instagram</span></div>
-          <div class="cs-metric"><b>4K → 7K</b><span>follower TikTok</span></div>
+          <div class="cs-metric"><b><small>da</small>4K <small>a</small>7K</b><span>follower TikTok</span></div>
         </div>
         <p class="cs-note">Richieste costanti dopo anni fermi: <em>“non era mai successo in 3 anni”</em></p>
       </div>
@@ -867,7 +1117,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
         <p class="cs-note">Una direzione chiara ha trasformato i contenuti in <em>richieste reali di clienti</em></p>
       </div>
     </div>
-    <p class="swipe-hint" aria-hidden="true">scorri per gli altri casi →</p>
+    <p class="swipe-hint" aria-hidden="true">scorri per gli altri casi</p>
 
     <div class="big-quote reveal">
       <p>"In un solo mese ho fatto <em>più progressi</em> che in tre anni da sola."</p>
@@ -877,7 +1127,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- VIDEO TESTIMONIANZE -->
-<section class="sec">
+<section class="sec band-ink bg-scuro">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Le loro parole</div>
@@ -888,7 +1138,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
       <div class="vtile reveal" data-video="sara-orsini-storia-1"><img loading="lazy" src="assets/video/posters/sara-orsini-storia-1.jpg" alt="Storia Instagram di Sara Orsini sul percorso"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Sara Orsini</b><span>Travel designer · storia Instagram</span></div></div>
       <div class="vtile reveal" data-video="sara-orsini-storia-2"><img loading="lazy" src="assets/video/posters/sara-orsini-storia-2.jpg" alt="Seconda storia Instagram di Sara Orsini"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Sara Orsini</b><span>«Siete stati tantissimi»</span></div></div>
       <div class="vtile reveal" data-video="montaggio-testimonianze"><img loading="lazy" src="assets/video/posters/montaggio-testimonianze.jpg" alt="Montaggio di testimonianze dalle call del mentoring"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>In call col team</b><span>Clienti del mentoring</span></div></div>
-      <div class="vtile reveal" data-video="vanessa-lacalamita"><img loading="lazy" src="assets/video/posters/vanessa-lacalamita.jpg" alt="Testimonianza di Vanessa Lacalamita"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Vanessa Lacalamita</b><span>Onicotecnica → formatrice</span></div></div>
+      <div class="vtile reveal" data-video="vanessa-lacalamita"><img loading="lazy" src="assets/video/posters/vanessa-lacalamita.jpg" alt="Testimonianza di Vanessa Lacalamita"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Vanessa Lacalamita</b><span>Onicotecnica e formatrice</span></div></div>
       <div class="vtile reveal" data-video="veronica-biraghi"><img loading="lazy" src="assets/video/posters/veronica-biraghi.jpg" alt="Testimonianza di Veronica Biraghi"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Veronica Biraghi</b><span>Brand haircare Diamanta</span></div></div>
       <div class="vtile reveal" data-video="wonder-ibiza"><img loading="lazy" src="assets/video/posters/wonder-ibiza.jpg" alt="Testimonianza di Sara, Wonder Ibiza"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Sara · Wonder Ibiza</b><span>Agenzia viaggi</span></div></div>
       <div class="vtile reveal" data-video="serena-tolotta"><img loading="lazy" src="assets/video/posters/serena-tolotta.jpg" alt="Testimonianza di Serena Tolotta"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Serena Tolotta</b><span>Manifestation coach</span></div></div>
@@ -898,27 +1148,27 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
       <div class="vtile reveal" data-video="laura-laspina"><img loading="lazy" src="assets/video/posters/laura-laspina.jpg" alt="Testimonianza di Laura Laspina, Evolush"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Laura Laspina</b><span>Evolush · estetica</span></div></div>
       <div class="vtile reveal" data-video="doina"><img loading="lazy" src="assets/video/posters/doina.jpg" alt="Testimonianza di Doina"><span class="pl"><svg width="20" height="24" viewBox="0 0 24 28" fill="#CD2471"><path d="M22 12.27a2 2 0 010 3.46L4 26.66A2 2 0 011 24.93V3.07A2 2 0 014 1.34l18 10.93z"/></svg></span><div class="vcap"><b>Doina</b><span>Cliente del percorso</span></div></div>
     </div>
-    <p class="swipe-hint" aria-hidden="true">scorri per le altre →</p>
+    <p class="swipe-hint" aria-hidden="true">scorri per le altre</p>
   </div>
 </section>
 
 <!-- FEEDBACK WALL -->
-<section class="sec sec-sm band-off">
+<section class="sec sec-sm bg-carta">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Messaggi veri, dalle chat del mentoring</div>
-      <h2 class="sh">Decine di professioniste ci scrivono i loro primi <em>risultati.</em></h2>
+      <h2 class="sh">Decine di professioniste ci scrivono i loro primi <mark>risultati</mark>.</h2>
       <p class="lead" style="margin-top:14px;color:var(--gray)">Tocca un messaggio per leggerlo intero</p>
     </div>
   </div>
   <div class="fbwall reveal">
     <div class="fbtrack" id="fbTrack"></div>
   </div>
-  <div class="wrap"><p class="swipe-hint" aria-hidden="true">scorri →</p></div>
+  <div class="wrap"><p class="swipe-hint" aria-hidden="true">scorri</p></div>
 </section>
 
 <!-- GEMMA -->
-<section class="sec">
+<section class="sec bg-tenue">
   <div class="wrap gemma-grid">
     <div class="gemma-media reveal">
       <div class="gemma-photo"><img src="assets/img/gemma-sgabello.jpg" alt="Gemma Lenoci" loading="lazy"></div>
@@ -928,8 +1178,8 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
       <div class="eyebrow">Chi ti accompagnerà</div>
       <h2 class="sh">Sono <em>Gemma</em> Lenoci.</h2>
       <div class="prose" style="margin-top:20px">
-        <p>Lavoro ogni giorno con professioniste e aziende che vogliono utilizzare la comunicazione in modo più strategico. Non insegno marketing perché ho semplicemente studiato alcuni concetti: lo insegno perché, insieme al mio team, lo applichiamo quotidianamente su progetti reali.</p>
-        <p>Analizziamo mercati, costruiamo posizionamenti, creiamo strategie, scriviamo contenuti, osserviamo ciò che funziona e correggiamo ciò che non funziona. E portiamo questa esperienza all'interno dei percorsi di mentoring.</p>
+        <p>Lavoro ogni giorno con professioniste e aziende che vogliono utilizzare la comunicazione in modo più strategico. Non insegno marketing perché ho semplicemente studiato alcuni concetti: lo insegno perché, insieme al mio team, <b class="k">lo applichiamo quotidianamente su progetti reali</b>.</p>
+        <p>Analizziamo mercati, costruiamo posizionamenti, creiamo strategie, scriviamo contenuti, <b class="s">osserviamo ciò che funziona e correggiamo ciò che non funziona</b>. E portiamo questa esperienza all'interno dei percorsi di mentoring.</p>
         <p>Non sarai seguita da persone inserite soltanto per riempire un pacchetto. Sarai affiancata da professionisti che lavorano concretamente sui clienti dell'agenzia. <strong>Una squadra ti accompagna. La direzione rimane sotto la mia supervisione.</strong></p>
       </div>
     </div>
@@ -937,7 +1187,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- PER CHI È -->
-<section class="sec band-off">
+<section class="sec bg-carta">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">A chi è rivolto</div>
@@ -977,14 +1227,14 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- GARANZIA -->
-<section class="sec">
+<section class="sec bg-carta">
   <div class="wrap">
     <div class="guarantee reveal">
       <div class="in">
         <div class="eyebrow" style="color:#fff">La nostra garanzia</div>
         <h2>Non ti prometteremo mai un risultato che non dipende interamente da noi.</h2>
         <div class="prose" style="margin-top:18px;max-width:70ch">
-          <p>Nessuna persona seria può garantirti al 100% quanti clienti otterrai o in quanto tempo. Entrano in gioco il tuo punto di partenza, il mercato, la qualità della tua offerta, il tempo che puoi dedicare, la continuità e le risposte reali del pubblico. Noi preferiamo garantirti ciò che possiamo realmente controllare.</p>
+          <p>Nessuna persona seria può garantirti al 100% quanti clienti otterrai o in quanto tempo. Entrano in gioco il tuo punto di partenza, il mercato, la qualità della tua offerta, il tempo che puoi dedicare, la continuità e le risposte reali del pubblico. <b class="s">Noi preferiamo garantirti ciò che possiamo realmente controllare.</b></p>
         </div>
         <div class="guar-grid">
           <ul class="check">
@@ -1007,7 +1257,7 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- COSA SUCCEDE DOPO -->
-<section class="sec band-ink">
+<section class="sec band-ink bg-scuro">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Cosa succede dopo la prenotazione</div>
@@ -1027,34 +1277,38 @@ figcaption{font-size:.84rem;color:var(--gray);margin-top:7px;line-height:1.4}
 </section>
 
 <!-- FAQ -->
-<section class="sec">
-  <div class="narrow">
-    <div class="eyebrow c reveal" style="justify-content:center">Domande frequenti</div>
-    <h2 class="sh center reveal">Le risposte alle domande più comuni</h2>
-    <div class="faq reveal">
-      <details><summary>La consulenza è davvero gratuita?</summary><div class="fa"><p>Sì. La consulenza iniziale è gratuita e serve a comprendere la tua situazione, individuare le priorità e valutare se esistono le condizioni per lavorare insieme.</p></div></details>
-      <details><summary>Durante la consulenza cercherete di vendermi qualcosa?</summary><div class="fa"><p>Quando uno dei nostri percorsi è adatto alla tua situazione, ti spieghiamo come funziona e ti presentiamo la proposta. Non cerchiamo però di convincerti a tutti i costi. Se il percorso non è adatto, oppure non abbiamo le competenze specifiche per il tuo settore, te lo diciamo con trasparenza.</p></div></details>
+<section class="sec bg-carta">
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Domande frequenti</div>
+      <h2 class="sh reveal">Le risposte alle domande più <mark class="blu">comuni</mark></h2>
+    </div>
+    <div class="split-r">
+      <div class="faq reveal">
+      <details><summary>La consulenza è davvero gratuita?</summary><div class="fa"><p>Sì. La consulenza iniziale <b class="k">è gratuita</b> e serve a comprendere la tua situazione, individuare le priorità e valutare se esistono le condizioni per lavorare insieme.</p></div></details>
+      <details><summary>Durante la consulenza cercherete di vendermi qualcosa?</summary><div class="fa"><p>Quando uno dei nostri percorsi è adatto alla tua situazione, ti spieghiamo come funziona e ti presentiamo la proposta. Non cerchiamo però di convincerti a tutti i costi. Se il percorso non è adatto, oppure non abbiamo le competenze specifiche per il tuo settore, <b class="k">te lo diciamo con trasparenza</b>.</p></div></details>
       <details><summary>La consulenza sarà direttamente con Gemma?</summary><div class="fa"><p>La prima consulenza può essere svolta da un professionista del team formato per analizzare il progetto e comprendere le tue esigenze. Gemma supervisiona la direzione dei percorsi e partecipa direttamente alle attività strategiche previste dalla soluzione scelta.</p></div></details>
-      <details><summary>Posso partecipare anche se parto da zero?</summary><div class="fa"><p>Sì, purché tu abbia una competenza, un servizio o un progetto concreto da sviluppare. Il punto di partenza non è un problema. Serve però disponibilità a lavorare, applicare e costruire.</p></div></details>
+      <details><summary>Posso partecipare anche se parto da zero?</summary><div class="fa"><p>Sì, purché tu abbia una competenza, un servizio o un progetto concreto da sviluppare. <b class="k">Il punto di partenza non è un problema.</b> Serve però disponibilità a lavorare, applicare e costruire.</p></div></details>
       <details><summary>Posso partecipare se ho già seguito altri corsi?</summary><div class="fa"><p>Sì. Molte delle persone che arrivano da noi hanno già acquistato corsi, consulenze o servizi. Il nostro lavoro non consiste nell'aggiungere altre informazioni, ma nel comprendere quali conoscenze siano realmente utili e come applicarle al tuo progetto.</p></div></details>
       <details><summary>Devo essere già attiva sui social?</summary><div class="fa"><p>Non necessariamente. Possiamo lavorare sia con chi deve iniziare, sia con chi pubblica già ma non sta ottenendo la risposta desiderata. La consulenza serve anche a comprendere il punto da cui è più corretto partire.</p></div></details>
       <details><summary>Il mentoring è individuale o di gruppo?</summary><div class="fa"><p>Dipende dal percorso selezionato. Esistono differenti livelli di supporto e affiancamento. Durante la consulenza analizzeremo quale formula possa essere più coerente con le tue necessità.</p></div></details>
       <details><summary>Create voi i contenuti?</summary><div class="fa"><p>Il mentoring nasce per aiutarti a comprendere, costruire e migliorare la tua comunicazione. Il livello di supporto operativo varia in base al percorso scelto. In consulenza chiariremo cosa viene svolto dal team e cosa viene costruito insieme a te.</p></div></details>
       <details><summary>Il percorso è adatto a qualsiasi settore?</summary><div class="fa"><p>No. Non crediamo che una persona possa conoscere e gestire perfettamente qualsiasi mercato. Prima di proporti un percorso valutiamo il tuo settore e comprendiamo se possediamo l'esperienza e le competenze necessarie per esserti realmente utili.</p></div></details>
-      <details><summary>Mi garantite che troverò clienti?</summary><div class="fa"><p>No, perché sarebbe una promessa poco seria. Possiamo garantirti strategia, analisi, supporto, feedback e un lavoro costruito sul tuo progetto. I risultati dipendono anche dall'applicazione, dall'offerta, dal mercato e dalla continuità.</p></div></details>
+      <details><summary>Mi garantite che troverò clienti?</summary><div class="fa"><p><b class="k">No, perché sarebbe una promessa poco seria.</b> Possiamo garantirti strategia, analisi, supporto, feedback e un lavoro costruito sul tuo progetto. I risultati dipendono anche dall'applicazione, dall'offerta, dal mercato e dalla continuità.</p></div></details>
       <details><summary>Quanto tempo devo dedicare al percorso?</summary><div class="fa"><p>Dipende dal punto di partenza, dagli obiettivi e dal tipo di affiancamento. Non serve passare intere giornate sui social: serve dedicare tempo alle attività corrette, con continuità e seguendo le priorità definite.</p></div></details>
-      <details><summary>Come faccio a sapere quale percorso scegliere?</summary><div class="fa"><p>Non devi sceglierlo da sola. La consulenza serve proprio a individuare il livello di supporto più adatto alla tua situazione e a proporti la soluzione più coerente.</p></div></details>
+      <details><summary>Come faccio a sapere quale percorso scegliere?</summary><div class="fa"><p><b class="k">Non devi sceglierlo da sola.</b> La consulenza serve proprio a individuare il livello di supporto più adatto alla tua situazione e a proporti la soluzione più coerente.</p></div></details>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- CTA FINALE -->
-<section class="sec finalcta">
+<section class="sec finalcta bg-fucsia">
   <div class="narrow">
-    <div class="eyebrow c reveal" style="justify-content:center;color:var(--rosa-scuro-bg)">Un ultimo pensiero</div>
-    <h2 class="reveal">Non ti serve fare tutto.<br>Ti serve iniziare dalle cose <em>giuste.</em></h2>
-    <p class="reveal">Puoi continuare a cercare il prossimo consiglio, salvare un altro prompt, provare un altro format. Oppure puoi fermarti un momento, analizzare ciò che stai facendo e costruire finalmente una direzione adatta alla tua attività.</p>
-    <button class="btn btn-primary btn-lg reveal" data-open-form>Prenota la tua consulenza strategica gratuita</button>
+    <div class="eyebrow c reveal">Un ultimo pensiero</div>
+    <h2 class="reveal">Non ti serve fare tutto.<br>Ti serve iniziare dalle cose <mark>giuste</mark>.</h2>
+    <p class="reveal">Puoi continuare a cercare il prossimo consiglio, salvare un altro prompt, provare un altro format. Oppure puoi fermarti un momento, analizzare ciò che stai facendo e <b class="s">costruire finalmente una direzione adatta alla tua attività</b>.</p>
+    <button class="btn btn-white btn-lg reveal" data-open-form>Prenota la tua consulenza strategica gratuita</button>
     <p class="note reveal">Analizzeremo il tuo punto di partenza e valuteremo quale percorso possa essere realmente adatto a te. Nessun obbligo di acquisto.</p>
   </div>
 </section>

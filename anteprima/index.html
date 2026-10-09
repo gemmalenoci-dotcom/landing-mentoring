@@ -653,6 +653,54 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
 }
 @media (prefers-reduced-motion:reduce){.mcard:hover{transform:none}}
 
+/* ---- evidenziatore DIETRO al testo: le righe vicine restano sopra e si leggono ---- */
+h1.hero-h1,h2.sh,.finalcta h2,h3{isolation:isolate}
+mark{position:relative;background:none!important;padding:0 .08em;margin:0 .02em;white-space:nowrap;color:#fff}
+mark::before{content:'';position:absolute;z-index:-1;left:-.06em;right:-.06em;top:.1em;bottom:.02em;background:var(--fucsia);border-radius:.05em}
+mark.blu::before{background:var(--blu)}
+.bg-fucsia mark{color:var(--fucsia)}
+.bg-fucsia mark::before{background:#fff}
+
+/* ---- contrasti: niente testo bianco su card bianche ---- */
+.bg-fucsia .prose .q{color:var(--fucsia)!important}
+.band-ink.bg-fucsia h2.sh em{color:#fff}
+:root{--gray:#665E61}
+span.av{background:var(--fucsia)!important;color:#fff!important}
+.fb-who span.av{color:#fff}
+.bg-scuro .k{color:#F2C4DC}
+
+/* ---- parole chiave nei testi: fucsia, oppure sottolineatura a mano blu ---- */
+.k{font-weight:700;color:var(--fucsia)}
+.s{font-weight:700;color:var(--ink);padding-bottom:.1em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:no-repeat left bottom/100% .38em url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C40 4 80 10.5 120 6S176 4 198 7.5' fill='none' stroke='%23227CC0' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")}
+.bg-fucsia .k,.guarantee .k,.bg-fucsia .s,.guarantee .s{color:#fff}
+.bg-fucsia .s,.guarantee .s{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C40 4 80 10.5 120 6S176 4 198 7.5' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")}
+.prose p,.lead,.hero-sub,.mcard p,.fase p,.faq .fa{color:var(--body)}
+.prose strong{color:var(--ink)}
+
+/* ---- PC: sezioni su due colonne invece che incolonnate al centro ---- */
+.split{width:min(1180px,92vw);margin-inline:auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:clamp(40px,6vw,96px);align-items:start}
+.split-l{position:sticky;top:104px}
+.split-l h2.sh{font-size:clamp(2.1rem,4.2vw,3.4rem)}
+.split-r>:first-child{margin-top:0!important}
+.split-l .eyebrow.c{display:inline-block;margin-inline:0}
+.split-l .center,.split-l h2.center{text-align:left}
+.wide{width:min(1120px,92vw);margin-inline:auto}
+.narrow-video{width:min(1000px,92vw);margin-inline:auto}
+.finalcta .narrow{width:min(900px,92vw)}
+@media (min-width:1000px){
+  .method{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:26px}
+  .method .mcard{grid-template-columns:1fr;gap:10px;padding:30px 28px}
+  .fasi{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:44px}
+  .fase{flex:0 1 calc((100% - 44px)/3);grid-template-columns:1fr;gap:12px;align-content:start}
+  .fase:nth-child(even){margin-left:0;translate:0 18px}
+  .pd{gap:34px}
+  .faq{margin-top:0}
+}
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .split-l{position:static}
+}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -694,7 +742,7 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
         <span class="hero-pre">Non ti serve un altro corso sui social.</span>
         Ti serve capire perché quello che stai facendo non porta le <mark>persone giuste</mark> a sceglierti.
       </h1>
-      <p class="hero-sub">Durante la nostra consulenza strategica gratuita analizziamo la tua situazione, individuiamo ciò che sta bloccando la tua comunicazione e valutiamo quale percorso possa essere più adatto al tuo mercato, ai tuoi obiettivi e al tuo punto di partenza.</p>
+      <p class="hero-sub">Durante la nostra consulenza strategica gratuita analizziamo la tua situazione, individuiamo <b class="k">ciò che sta bloccando la tua comunicazione</b> e valutiamo quale percorso possa essere più adatto al tuo mercato, ai tuoi obiettivi e al tuo punto di partenza.</p>
       <div class="hero-cta">
         <button class="btn btn-primary btn-lg" data-open-form>Prenota la consulenza strategica gratuita</button>
       </div>
@@ -724,9 +772,9 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
   <div class="narrow center">
     <div class="eyebrow c reveal">Guarda prima questo</div>
     <h2 class="sh reveal">Prima di acquistare un altro percorso, guarda questo <mark>video</mark>.</h2>
-    <p class="lead reveal" style="margin-top:16px;color:var(--gray)">In pochi minuti ti spiego perché molti corsi ti lasciano piena di informazioni ma senza una direzione, e cosa dovrebbe offrirti davvero un percorso di mentoring.</p>
+    <p class="lead reveal" style="margin-top:16px;color:var(--gray)">In pochi minuti ti spiego perché molti corsi ti lasciano <b class="s">piena di informazioni ma senza una direzione</b>, e cosa dovrebbe offrirti davvero un percorso di mentoring.</p>
   </div>
-  <div class="narrow reveal">
+  <div class="narrow-video reveal">
     <div class="videobox has-video" id="videoBox">
       <img class="vposter" src="../assets/video/posters/vsl-mentorship.jpg" alt="Video di presentazione Mentorship Gemma Lenoci" loading="lazy">
       <div class="in">
@@ -743,28 +791,33 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
 
 <!-- RISPECCHIAMENTO -->
 <section class="sec bg-tenue">
-  <div class="narrow">
-    <div class="eyebrow reveal">Ti riconosci?</div>
-    <h2 class="sh reveal">Probabilmente non sei arrivata qui perché non sai nulla di <em>social.</em></h2>
-    <div class="prose reveal" style="margin-top:22px">
-      <p>Sei arrivata qui perché sai già abbastanza da renderti conto che qualcosa non sta funzionando.</p>
-      <p>Magari hai acquistato un videocorso che hai seguito solo a metà. Hai provato a creare un piano editoriale, ma dopo qualche settimana hai iniziato di nuovo a pubblicare senza una vera logica. Hai salvato decine di hook, prompt, format e consigli che sembravano perfetti, ma quando li hai applicati alla tua attività non hai ottenuto lo stesso risultato.</p>
-      <p>Forse ti sei affidata a un'agenzia o a un social media manager, ma non ti riconoscevi nei contenuti che venivano pubblicati. Oppure pubblichi con costanza, ricevi qualche visualizzazione e qualche complimento, ma le richieste realmente interessanti continuano ad arrivare poco o per niente.</p>
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Ti riconosci?</div>
+      <h2 class="sh reveal">Probabilmente non sei arrivata qui perché non sai nulla di <em>social.</em></h2>
+    </div>
+    <div class="split-r">
+      <div class="prose reveal" style="margin-top:22px">
+      <p>Sei arrivata qui perché sai già abbastanza da renderti conto che <b class="k">qualcosa non sta funzionando</b>.</p>
+      <p>Magari hai acquistato un videocorso che hai seguito solo a metà. Hai provato a creare un piano editoriale, ma dopo qualche settimana hai iniziato di nuovo a <b class="k">pubblicare senza una vera logica</b>. Hai salvato decine di hook, prompt, format e consigli che sembravano perfetti, ma quando li hai applicati alla tua attività <b class="s">non hai ottenuto lo stesso risultato</b>.</p>
+      <p>Forse ti sei affidata a un'agenzia o a un social media manager, ma non ti riconoscevi nei contenuti che venivano pubblicati. Oppure pubblichi con costanza, ricevi qualche visualizzazione e qualche complimento, ma <b class="k">le richieste realmente interessanti</b> continuano ad arrivare poco o per niente.</p>
       <p class="q">"Il problema sono io, il mio settore, la mia offerta oppure l'algoritmo?"</p>
       <p>La risposta è che, molto spesso, il problema non è nessuna di queste cose presa singolarmente. <strong>Il problema è che manca una strategia costruita intorno alla tua situazione reale.</strong></p>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- RIMOZIONE SENSO DI COLPA -->
 <section class="sec bg-carta">
-  <div class="narrow">
-    <div class="eyebrow reveal">Non è colpa tua</div>
-    <h2 class="sh reveal">Non sei tu che non ti sei <mark class="blu">impegnata</mark> abbastanza.</h2>
-    <div class="prose reveal" style="margin-top:22px">
-      <p>Hai semplicemente provato ad applicare indicazioni generiche a un business che generico non è. Ogni professionista ha:</p>
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Non è colpa tua</div>
+      <h2 class="sh reveal">Non sei tu che non ti sei <mark class="blu">impegnata</mark> abbastanza.</h2>
+      <div class="prose reveal" style="margin-top:22px">
+      <p>Hai semplicemente provato ad applicare <b class="k">indicazioni generiche</b> a un business che <b class="s">generico non è</b>. Ogni professionista ha:</p>
     </div>
-    <ul class="plain chips-list reveal" style="margin-top:12px">
+      <ul class="plain chips-list reveal" style="margin-top:12px">
       <li>un mercato differente;</li>
       <li>un livello di autorevolezza differente;</li>
       <li>un'offerta differente;</li>
@@ -772,32 +825,39 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
       <li>un modo diverso di comunicare;</li>
       <li>risorse, tempo e obiettivi differenti.</li>
     </ul>
-    <div class="prose reveal" style="margin-top:20px">
-      <p>Eppure, la maggior parte dei percorsi propone a tutte lo stesso sistema: gli stessi video, gli stessi esercizi, gli stessi calendari editoriali, gli stessi prompt, gli stessi consigli sulla viralità.</p>
-      <p>Il risultato? Sai molte cose, ma non sai quali siano quelle giuste da applicare adesso.</p>
     </div>
-    <h3 class="reveal" style="font-size:clamp(1.4rem,2.6vw,2rem);margin-top:30px">Non ti manca un'altra <em>informazione</em>.</h3>
-    <div class="prose reveal" style="margin-top:12px">
-      <p>Ti manca qualcuno che sappia osservare il tuo caso, individuare le priorità e correggere ciò che stai facendo mentre lo stai facendo.</p>
+    <div class="split-r">
+      <div class="prose reveal" style="margin-top:20px">
+      <p>Eppure, la maggior parte dei percorsi propone a tutte <b class="k">lo stesso sistema</b>: gli stessi video, gli stessi esercizi, gli stessi calendari editoriali, gli stessi prompt, gli stessi consigli sulla viralità.</p>
+      <p>Il risultato? Sai molte cose, ma <b class="s">non sai quali siano quelle giuste da applicare adesso</b>.</p>
     </div>
-    <div class="reveal" style="margin-top:24px"><button class="btn btn-primary btn-lg" data-open-form>Voglio capire cosa sta bloccando la mia comunicazione</button></div>
+      <h3 class="reveal" style="font-size:clamp(1.4rem,2.6vw,2rem);margin-top:30px">Non ti manca un'altra <em>informazione</em>.</h3>
+      <div class="prose reveal" style="margin-top:12px">
+      <p>Ti manca qualcuno che sappia osservare il tuo caso, individuare le priorità e <b class="k">correggere ciò che stai facendo mentre lo stai facendo</b>.</p>
+    </div>
+      <div class="reveal" style="margin-top:24px"><button class="btn btn-primary btn-lg" data-open-form>Voglio capire cosa sta bloccando la mia comunicazione</button></div>
+    </div>
   </div>
 </section>
 
 <!-- CAMBIO DI PARADIGMA -->
 <section class="sec band-ink bg-fucsia">
-  <div class="narrow">
-    <div class="eyebrow reveal">Il cambio di paradigma</div>
-    <h2 class="sh reveal">L'algoritmo non compra i tuoi servizi.<br>Le <em>persone</em> sì.</h2>
-    <div class="prose reveal" style="margin-top:22px">
-      <p>Per molto tempo ti hanno insegnato a creare contenuti per ottenere più visualizzazioni, più interazioni e più follower. Ma un contenuto può diventare virale e non portarti nemmeno una richiesta.</p>
-      <p>Può essere visto da centomila persone che non hanno alcun bisogno del tuo servizio, oppure da duemila persone tra cui si trovano quattro potenziali clienti. Quale dei due contenuti ha funzionato davvero?</p>
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Il cambio di paradigma</div>
+      <h2 class="sh reveal">L'algoritmo non compra i tuoi servizi.<br>Le <em>persone</em> sì.</h2>
+    </div>
+    <div class="split-r">
+      <div class="prose reveal" style="margin-top:22px">
+      <p>Per molto tempo ti hanno insegnato a creare contenuti per ottenere più visualizzazioni, più interazioni e più follower. <b class="s">Ma un contenuto può diventare virale e non portarti nemmeno una richiesta.</b></p>
+      <p>Può essere visto da centomila persone che non hanno alcun bisogno del tuo servizio, oppure da duemila persone tra cui si trovano quattro potenziali clienti. <b class="k">Quale dei due contenuti ha funzionato davvero?</b></p>
       <p>Noi non partiamo dal contenuto che potrebbe piacere a tutti. Partiamo dalla persona che dovrebbe guardarlo e pensare:</p>
       <p class="q">"Sta parlando esattamente di me."</p>
     </div>
-    <h3 class="reveal" style="font-size:clamp(1.5rem,2.8vw,2.1rem);margin-top:28px;color:#fff">Il tuo obiettivo è diventare rilevante per le <span class="hand" style="color:#fff;font-size:1.25em">persone giuste.</span></h3>
-    <div class="prose reveal" style="margin-top:16px">
-      <p>Quando il contenuto è costruito intorno al tuo cliente, anche l'algoritmo ha più possibilità di capire a chi mostrarlo. Ma la partita non si vince inseguendo continuamente nuovi trend. Si vince sapendo a chi stai parlando, che cosa quella persona sta vivendo, che cosa le impedisce di scegliere e quale messaggio può farla fermare, fidare e agire.</p>
+      <h3 class="reveal" style="font-size:clamp(1.5rem,2.8vw,2.1rem);margin-top:28px;color:#fff">Il tuo obiettivo è diventare rilevante per le <span class="hand" style="color:#fff;font-size:1.25em">persone giuste.</span></h3>
+      <div class="prose reveal" style="margin-top:16px">
+      <p>Quando il contenuto è costruito intorno al tuo cliente, anche l'algoritmo ha più possibilità di capire a chi mostrarlo. Ma la partita non si vince inseguendo continuamente nuovi trend. <b class="s">Si vince sapendo a chi stai parlando</b>, che cosa quella persona sta vivendo, che cosa le impedisce di scegliere e quale messaggio può farla fermare, fidare e agire.</p>
+    </div>
     </div>
   </div>
 </section>
@@ -808,20 +868,20 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Il nostro metodo</div>
       <h2 class="sh">I tre elementi che trasformano la formazione in <em>applicazione</em></h2>
-      <p class="lead" style="margin-top:16px;color:var(--gray)">Non abbiamo costruito i nostri percorsi chiedendoci quanti moduli inserire per farli sembrare più ricchi. Ci siamo chiesti di cosa ha realmente bisogno una professionista per trasformare i social in uno strumento di posizionamento e acquisizione.</p>
+      <p class="lead" style="margin-top:16px;color:var(--gray)">Non abbiamo costruito i nostri percorsi chiedendoci quanti moduli inserire per farli sembrare più ricchi. Ci siamo chiesti <b class="k">di cosa ha realmente bisogno una professionista</b> per trasformare i social in uno strumento di posizionamento e acquisizione.</p>
     </div>
     <div class="method">
       <div class="mcard reveal"><div class="mnum">01</div><div>
         <h3>Contenuti costruiti sulle persone giuste</h3>
-        <p>Non ti consegniamo una lista di idee da pubblicare. Ti aiutiamo a capire quali temi interessano davvero il tuo pubblico, quali problemi fanno riconoscere la persona giusta, quali messaggi costruiscono autorevolezza e come differenziarti da chi propone servizi simili. Non devi pubblicare tutto: devi pubblicare ciò che aiuta il tuo cliente a comprendere il problema, fidarsi della tua competenza e avvicinarsi alla tua offerta.</p>
+        <p>Non ti consegniamo una lista di idee da pubblicare. Ti aiutiamo a capire <b class="s">quali temi interessano davvero il tuo pubblico</b>, quali problemi fanno riconoscere la persona giusta, quali messaggi costruiscono autorevolezza e come differenziarti da chi propone servizi simili. Non devi pubblicare tutto: <b class="k">devi pubblicare ciò che aiuta il tuo cliente</b> a comprendere il problema, fidarsi della tua competenza e avvicinarsi alla tua offerta.</p>
       </div></div>
       <div class="mcard reveal"><div class="mnum">02</div><div>
         <h3>Psicologia della decisione applicata al marketing</h3>
-        <p>Il marketing non è soltanto estetica, trend e creatività. È comprensione delle persone. Lavoriamo sui principi della psicologia della decisione e della neuroscienza applicata alla comunicazione: perché una persona si ferma su un contenuto, cosa la fa sentire compresa, come si costruisce fiducia nel tempo e come accompagnare il pubblico dalla curiosità alla decisione. Anche l'intelligenza artificiale entra nel percorso, ma per analizzare meglio il mercato e velocizzare il lavoro, senza togliere identità alla tua comunicazione.</p>
+        <p>Il marketing non è soltanto estetica, trend e creatività. <b class="k">È comprensione delle persone.</b> Lavoriamo sui principi della psicologia della decisione e della neuroscienza applicata alla comunicazione: <b class="s">perché una persona si ferma su un contenuto</b>, cosa la fa sentire compresa, come si costruisce fiducia nel tempo e come accompagnare il pubblico dalla curiosità alla decisione. Anche l'intelligenza artificiale entra nel percorso, ma per analizzare meglio il mercato e velocizzare il lavoro, senza togliere identità alla tua comunicazione.</p>
       </div></div>
       <div class="mcard reveal"><div class="mnum">03</div><div>
         <h3>Assistenza, revisione e correzione</h3>
-        <p>Questa è la parte che, per noi, fa realmente la differenza. Non ricevi soltanto indicazioni teoriche. Ricevi confronto, feedback, correzioni e una direzione. Le persone che ti seguono lavorano ogni giorno anche su progetti e clienti reali. Gemma supervisiona la direzione, revisiona il percorso e partecipa direttamente alle attività previste. <strong>Non vieni lasciata sola dopo averti spiegato cosa fare.</strong></p>
+        <p>Questa è la parte che, per noi, fa realmente la differenza. Non ricevi soltanto indicazioni teoriche. <b class="k">Ricevi confronto, feedback, correzioni e una direzione.</b> Le persone che ti seguono lavorano ogni giorno anche su progetti e clienti reali. Gemma supervisiona la direzione, revisiona il percorso e partecipa direttamente alle attività previste. <strong>Non vieni lasciata sola dopo averti spiegato cosa fare.</strong></p>
       </div></div>
     </div>
     <div class="proof">
@@ -849,12 +909,16 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
 
 <!-- TRASFORMAZIONE -->
 <section class="sec bg-tenue">
-  <div class="narrow">
-    <div class="eyebrow reveal">La trasformazione</div>
-    <h2 class="sh reveal">Da contenuti pubblicati a caso a una comunicazione che segue una <mark>direzione</mark>.</h2>
-    <p class="lead reveal" style="margin-top:16px;color:var(--body)">Il percorso non serve a renderti dipendente da noi. Serve a costruire in te maggiore chiarezza e autonomia.</p>
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">La trasformazione</div>
+      <h2 class="sh reveal">Da contenuti pubblicati a caso a una comunicazione che segue una <mark>direzione</mark>.</h2>
+    </div>
+    <div class="split-r">
+      <p class="lead reveal" style="margin-top:16px;color:var(--body)">Il percorso non serve a renderti dipendente da noi. Serve a costruire in te <b class="k">maggiore chiarezza e autonomia</b>.</p>
+    </div>
   </div>
-  <div class="narrow">
+  <div class="wide">
     <div class="pd">
       <div class="pd-card pd-prima reveal">
         <h3>Prima</h3>
@@ -889,16 +953,16 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
 
 <!-- FASI -->
 <section class="sec bg-carta">
-  <div class="narrow">
+  <div class="wrap">
     <div class="eyebrow reveal">Come funziona il mentoring</div>
-    <h2 class="sh reveal">Non entri in una piattaforma e vieni lasciata da <em>sola.</em></h2>
+    <h2 class="sh reveal" style="max-width:820px">Non entri in una piattaforma e vieni lasciata da <em>sola.</em></h2>
     <p class="lead reveal" style="margin-top:14px;color:var(--gray)">Il lavoro segue un processo preciso, in cinque fasi.</p>
     <div class="fasi">
-      <div class="fase reveal"><span class="fn">Fase 1</span><div><h3>Analisi</h3><p>Studiamo il tuo progetto, il tuo mercato, il pubblico, il posizionamento, l'offerta e la comunicazione attuale. Prima di dirti cosa pubblicare dobbiamo comprendere cosa vuoi costruire.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 2</span><div><h3>Direzione</h3><p>Definiamo le priorità strategiche. Comprendiamo quali messaggi devono essere associati al tuo nome, quali contenuti possono attirare il pubblico corretto e come presentare meglio la tua competenza.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 3</span><div><h3>Applicazione</h3><p>Trasformi la strategia in contenuti, attività e decisioni reali. Non lavori su esercizi teorici scollegati dal tuo progetto: lavori direttamente sulla tua comunicazione.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 4</span><div><h3>Revisione</h3><p>Analizziamo ciò che hai prodotto. Individuiamo cosa funziona, cosa è poco chiaro e cosa deve essere corretto. Il feedback ti permette di migliorare più velocemente e di evitare di ripetere gli stessi errori.</p></div></div>
-      <div class="fase reveal"><span class="fn">Fase 5</span><div><h3>Ottimizzazione</h3><p>Osserviamo le risposte del mercato e adattiamo il lavoro. Perché una strategia non deve essere semplicemente bella sulla carta: deve funzionare nel mondo reale.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 1</span><div><h3>Analisi</h3><p>Studiamo il tuo progetto, il tuo mercato, il pubblico, il posizionamento, l'offerta e la comunicazione attuale. Prima di dirti cosa pubblicare dobbiamo <b class="k">comprendere cosa vuoi costruire</b>.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 2</span><div><h3>Direzione</h3><p>Definiamo le priorità strategiche. Comprendiamo <b class="k">quali messaggi devono essere associati al tuo nome</b>, quali contenuti possono attirare il pubblico corretto e come presentare meglio la tua competenza.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 3</span><div><h3>Applicazione</h3><p>Trasformi la strategia in contenuti, attività e decisioni reali. Non lavori su esercizi teorici scollegati dal tuo progetto: <b class="k">lavori direttamente sulla tua comunicazione</b>.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 4</span><div><h3>Revisione</h3><p>Analizziamo ciò che hai prodotto. Individuiamo cosa funziona, cosa è poco chiaro e cosa deve essere corretto. Il feedback ti permette di <b class="k">migliorare più velocemente</b> e di evitare di ripetere gli stessi errori.</p></div></div>
+      <div class="fase reveal"><span class="fn">Fase 5</span><div><h3>Ottimizzazione</h3><p>Osserviamo le risposte del mercato e adattiamo il lavoro. Perché una strategia non deve essere semplicemente bella sulla carta: <b class="k">deve funzionare nel mondo reale</b>.</p></div></div>
     </div>
   </div>
 </section>
@@ -909,7 +973,7 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Alcuni casi studio</div>
       <h2 class="sh">Non partiamo dalle teorie. Partiamo da ciò che abbiamo visto <mark class="blu">accadere</mark>.</h2>
-      <p class="lead" style="margin-top:16px;color:var(--gray)">Abbiamo lavorato con professioniste e imprenditori in situazioni molto differenti. Le strategie utilizzate non sono state identiche, perché identici non erano i loro mercati, i loro obiettivi e i loro punti di partenza.</p>
+      <p class="lead" style="margin-top:16px;color:var(--gray)">Abbiamo lavorato con professioniste e imprenditori in situazioni molto differenti. Le strategie utilizzate non sono state identiche, perché <b class="s">identici non erano i loro mercati, i loro obiettivi e i loro punti di partenza</b>.</p>
     </div>
     <div class="cs-grid">
       <!-- 00 Sara Orsini (mentoring, feat + video) -->
@@ -1115,8 +1179,8 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
       <div class="eyebrow">Chi ti accompagnerà</div>
       <h2 class="sh">Sono <em>Gemma</em> Lenoci.</h2>
       <div class="prose" style="margin-top:20px">
-        <p>Lavoro ogni giorno con professioniste e aziende che vogliono utilizzare la comunicazione in modo più strategico. Non insegno marketing perché ho semplicemente studiato alcuni concetti: lo insegno perché, insieme al mio team, lo applichiamo quotidianamente su progetti reali.</p>
-        <p>Analizziamo mercati, costruiamo posizionamenti, creiamo strategie, scriviamo contenuti, osserviamo ciò che funziona e correggiamo ciò che non funziona. E portiamo questa esperienza all'interno dei percorsi di mentoring.</p>
+        <p>Lavoro ogni giorno con professioniste e aziende che vogliono utilizzare la comunicazione in modo più strategico. Non insegno marketing perché ho semplicemente studiato alcuni concetti: lo insegno perché, insieme al mio team, <b class="k">lo applichiamo quotidianamente su progetti reali</b>.</p>
+        <p>Analizziamo mercati, costruiamo posizionamenti, creiamo strategie, scriviamo contenuti, <b class="s">osserviamo ciò che funziona e correggiamo ciò che non funziona</b>. E portiamo questa esperienza all'interno dei percorsi di mentoring.</p>
         <p>Non sarai seguita da persone inserite soltanto per riempire un pacchetto. Sarai affiancata da professionisti che lavorano concretamente sui clienti dell'agenzia. <strong>Una squadra ti accompagna. La direzione rimane sotto la mia supervisione.</strong></p>
       </div>
     </div>
@@ -1171,7 +1235,7 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
         <div class="eyebrow" style="color:#fff">La nostra garanzia</div>
         <h2>Non ti prometteremo mai un risultato che non dipende interamente da noi.</h2>
         <div class="prose" style="margin-top:18px;max-width:70ch">
-          <p>Nessuna persona seria può garantirti al 100% quanti clienti otterrai o in quanto tempo. Entrano in gioco il tuo punto di partenza, il mercato, la qualità della tua offerta, il tempo che puoi dedicare, la continuità e le risposte reali del pubblico. Noi preferiamo garantirti ciò che possiamo realmente controllare.</p>
+          <p>Nessuna persona seria può garantirti al 100% quanti clienti otterrai o in quanto tempo. Entrano in gioco il tuo punto di partenza, il mercato, la qualità della tua offerta, il tempo che puoi dedicare, la continuità e le risposte reali del pubblico. <b class="s">Noi preferiamo garantirti ciò che possiamo realmente controllare.</b></p>
         </div>
         <div class="guar-grid">
           <ul class="check">
@@ -1215,22 +1279,26 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
 
 <!-- FAQ -->
 <section class="sec bg-carta">
-  <div class="narrow">
-    <div class="eyebrow c reveal" style="justify-content:center">Domande frequenti</div>
-    <h2 class="sh center reveal">Le risposte alle domande più comuni</h2>
-    <div class="faq reveal">
-      <details><summary>La consulenza è davvero gratuita?</summary><div class="fa"><p>Sì. La consulenza iniziale è gratuita e serve a comprendere la tua situazione, individuare le priorità e valutare se esistono le condizioni per lavorare insieme.</p></div></details>
-      <details><summary>Durante la consulenza cercherete di vendermi qualcosa?</summary><div class="fa"><p>Quando uno dei nostri percorsi è adatto alla tua situazione, ti spieghiamo come funziona e ti presentiamo la proposta. Non cerchiamo però di convincerti a tutti i costi. Se il percorso non è adatto, oppure non abbiamo le competenze specifiche per il tuo settore, te lo diciamo con trasparenza.</p></div></details>
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">Domande frequenti</div>
+      <h2 class="sh reveal">Le risposte alle domande più <mark class="blu">comuni</mark></h2>
+    </div>
+    <div class="split-r">
+      <div class="faq reveal">
+      <details><summary>La consulenza è davvero gratuita?</summary><div class="fa"><p>Sì. La consulenza iniziale <b class="k">è gratuita</b> e serve a comprendere la tua situazione, individuare le priorità e valutare se esistono le condizioni per lavorare insieme.</p></div></details>
+      <details><summary>Durante la consulenza cercherete di vendermi qualcosa?</summary><div class="fa"><p>Quando uno dei nostri percorsi è adatto alla tua situazione, ti spieghiamo come funziona e ti presentiamo la proposta. Non cerchiamo però di convincerti a tutti i costi. Se il percorso non è adatto, oppure non abbiamo le competenze specifiche per il tuo settore, <b class="k">te lo diciamo con trasparenza</b>.</p></div></details>
       <details><summary>La consulenza sarà direttamente con Gemma?</summary><div class="fa"><p>La prima consulenza può essere svolta da un professionista del team formato per analizzare il progetto e comprendere le tue esigenze. Gemma supervisiona la direzione dei percorsi e partecipa direttamente alle attività strategiche previste dalla soluzione scelta.</p></div></details>
-      <details><summary>Posso partecipare anche se parto da zero?</summary><div class="fa"><p>Sì, purché tu abbia una competenza, un servizio o un progetto concreto da sviluppare. Il punto di partenza non è un problema. Serve però disponibilità a lavorare, applicare e costruire.</p></div></details>
+      <details><summary>Posso partecipare anche se parto da zero?</summary><div class="fa"><p>Sì, purché tu abbia una competenza, un servizio o un progetto concreto da sviluppare. <b class="k">Il punto di partenza non è un problema.</b> Serve però disponibilità a lavorare, applicare e costruire.</p></div></details>
       <details><summary>Posso partecipare se ho già seguito altri corsi?</summary><div class="fa"><p>Sì. Molte delle persone che arrivano da noi hanno già acquistato corsi, consulenze o servizi. Il nostro lavoro non consiste nell'aggiungere altre informazioni, ma nel comprendere quali conoscenze siano realmente utili e come applicarle al tuo progetto.</p></div></details>
       <details><summary>Devo essere già attiva sui social?</summary><div class="fa"><p>Non necessariamente. Possiamo lavorare sia con chi deve iniziare, sia con chi pubblica già ma non sta ottenendo la risposta desiderata. La consulenza serve anche a comprendere il punto da cui è più corretto partire.</p></div></details>
       <details><summary>Il mentoring è individuale o di gruppo?</summary><div class="fa"><p>Dipende dal percorso selezionato. Esistono differenti livelli di supporto e affiancamento. Durante la consulenza analizzeremo quale formula possa essere più coerente con le tue necessità.</p></div></details>
       <details><summary>Create voi i contenuti?</summary><div class="fa"><p>Il mentoring nasce per aiutarti a comprendere, costruire e migliorare la tua comunicazione. Il livello di supporto operativo varia in base al percorso scelto. In consulenza chiariremo cosa viene svolto dal team e cosa viene costruito insieme a te.</p></div></details>
       <details><summary>Il percorso è adatto a qualsiasi settore?</summary><div class="fa"><p>No. Non crediamo che una persona possa conoscere e gestire perfettamente qualsiasi mercato. Prima di proporti un percorso valutiamo il tuo settore e comprendiamo se possediamo l'esperienza e le competenze necessarie per esserti realmente utili.</p></div></details>
-      <details><summary>Mi garantite che troverò clienti?</summary><div class="fa"><p>No, perché sarebbe una promessa poco seria. Possiamo garantirti strategia, analisi, supporto, feedback e un lavoro costruito sul tuo progetto. I risultati dipendono anche dall'applicazione, dall'offerta, dal mercato e dalla continuità.</p></div></details>
+      <details><summary>Mi garantite che troverò clienti?</summary><div class="fa"><p><b class="k">No, perché sarebbe una promessa poco seria.</b> Possiamo garantirti strategia, analisi, supporto, feedback e un lavoro costruito sul tuo progetto. I risultati dipendono anche dall'applicazione, dall'offerta, dal mercato e dalla continuità.</p></div></details>
       <details><summary>Quanto tempo devo dedicare al percorso?</summary><div class="fa"><p>Dipende dal punto di partenza, dagli obiettivi e dal tipo di affiancamento. Non serve passare intere giornate sui social: serve dedicare tempo alle attività corrette, con continuità e seguendo le priorità definite.</p></div></details>
-      <details><summary>Come faccio a sapere quale percorso scegliere?</summary><div class="fa"><p>Non devi sceglierlo da sola. La consulenza serve proprio a individuare il livello di supporto più adatto alla tua situazione e a proporti la soluzione più coerente.</p></div></details>
+      <details><summary>Come faccio a sapere quale percorso scegliere?</summary><div class="fa"><p><b class="k">Non devi sceglierlo da sola.</b> La consulenza serve proprio a individuare il livello di supporto più adatto alla tua situazione e a proporti la soluzione più coerente.</p></div></details>
+    </div>
     </div>
   </div>
 </section>
@@ -1240,7 +1308,7 @@ ul.chips-list li::before{left:14px;top:50%;margin-top:-3.5px}
   <div class="narrow">
     <div class="eyebrow c reveal">Un ultimo pensiero</div>
     <h2 class="reveal">Non ti serve fare tutto.<br>Ti serve iniziare dalle cose <mark>giuste</mark>.</h2>
-    <p class="reveal">Puoi continuare a cercare il prossimo consiglio, salvare un altro prompt, provare un altro format. Oppure puoi fermarti un momento, analizzare ciò che stai facendo e costruire finalmente una direzione adatta alla tua attività.</p>
+    <p class="reveal">Puoi continuare a cercare il prossimo consiglio, salvare un altro prompt, provare un altro format. Oppure puoi fermarti un momento, analizzare ciò che stai facendo e <b class="s">costruire finalmente una direzione adatta alla tua attività</b>.</p>
     <button class="btn btn-white btn-lg reveal" data-open-form>Prenota la tua consulenza strategica gratuita</button>
     <p class="note reveal">Analizzeremo il tuo punto di partenza e valuteremo quale percorso possa essere realmente adatto a te. Nessun obbligo di acquisto.</p>
   </div>

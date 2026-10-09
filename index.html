@@ -759,9 +759,36 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
 @media (max-width:640px){ .cs-grid{grid-template-columns:1fr} .cs-card.feat{grid-column:auto} .cs-metrics{gap:12px 18px} .cs-metric b{font-size:1.25rem} }
 @media (max-width:540px){ .f2{grid-template-columns:1fr} .hero-cta .btn{width:100%} }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+
+/* club gratis: striscia in cima e sezione blu */
+.club-bar{display:block;background:url(assets/texture/grana.jpg) center/cover,#227CC0;background-blend-mode:multiply,normal;color:#fff;text-align:center;text-decoration:none;font-size:14.5px;line-height:1.3;padding:10px 16px}
+.club-bar b{font-weight:800;border-bottom:2px solid rgba(255,255,255,.55);padding-bottom:1px;white-space:nowrap}
+.club-bar:hover b{border-bottom-color:#fff}
+.club-bar .cb-l{display:inline}.club-bar .cb-s{display:none}
+.club{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,5.5vw,84px);align-items:center}
+.club h2.sh{color:#fff}
+.club h2.sh em{font-family:var(--serif);font-style:italic;font-weight:700;color:#fff;letter-spacing:-.03em}
+.club .lead{color:rgba(255,255,255,.92)!important;margin-top:18px;font-size:1.08rem}
+.club .lead b{color:#fff}
+.club-chips{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px;padding:0;list-style:none}
+.club-chips li{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:700;font-size:14.5px;border-radius:100px;padding:8px 16px}
+.club-chips li:nth-child(odd){rotate:-1deg}.club-chips li:nth-child(even){rotate:.8deg}
+.club .btn-white{color:var(--blu)}
+.club-note{margin-top:14px;font-size:14px;color:rgba(255,255,255,.8)}
+.club-shot{position:relative;background:#fff;border-radius:10px;padding:26px 10px 10px;rotate:1.8deg;box-shadow:0 26px 50px -24px rgba(20,40,70,.6),7px 8px 0 rgba(255,255,255,.22)}
+.club-shot::before{content:'';position:absolute;left:16px;top:10px;width:8px;height:8px;border-radius:50%;background:#DCD7CF;box-shadow:13px 0 0 #DCD7CF,26px 0 0 #DCD7CF}
+.club-shot::after{content:'';position:absolute;top:-24px;left:50%;width:50px;height:50px;margin-left:-25px;background:url(assets/deco/puntina.png) center/contain no-repeat}
+.club-shot img{display:block;width:100%;height:auto;border-radius:4px}
+.club-shot figcaption{font-family:var(--mano);font-size:1.45rem;color:var(--ink);text-align:center;padding:10px 0 2px;line-height:1}
+.bg-blu .eyebrow{background:#fff!important;color:var(--blu)!important}
+.ft-club{display:inline-block;margin-top:14px;font-weight:800;color:var(--fucsia);text-decoration:none;border-bottom:2px solid rgba(205,36,113,.35)}
+@media (max-width:900px){.club{grid-template-columns:1fr}.club-shot{max-width:560px;margin-top:8px}}
+@media (max-width:540px){.club-bar{font-size:13.5px;padding:9px 12px}.club-bar .cb-l{display:none}.club-bar .cb-s{display:inline}.club .btn{width:100%}}
 </style>
 </head>
 <body>
+
+<a class="club-bar" href="https://entra.unlikeacademy.it/?utm_source=landing-mentoring&amp;utm_medium=banner&amp;utm_campaign=club-gratis" target="_blank" rel="noopener" data-club="banner"><span class="cb-l">Non fai ancora parte di Unlike Academy? </span><span class="cb-s">Non sei ancora nel Club? </span><b>Entra gratis<span class="cb-l"> nel Club</span></b></a>
 
 <header>
   <div class="wrap hd">
@@ -1285,6 +1312,29 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
   </div>
 </section>
 
+<!-- CLUB GRATIS -->
+<section class="sec bg-blu" id="club">
+  <div class="wrap club">
+    <div class="reveal">
+      <div class="eyebrow">Unlike Academy · gratis</div>
+      <h2 class="sh">Non fai ancora parte di Unlike Academy? <em>Entra gratis</em> nel Club</h2>
+      <p class="lead">Se il percorso oggi non fa ancora per te, puoi iniziare da qui: dentro c'è il <b>videocorso introduttivo alla social media strategy</b> e una community dove fare domande e ricevere feedback sui tuoi contenuti</p>
+      <ul class="club-chips">
+        <li>Videocorso introduttivo</li>
+        <li>Community e feedback</li>
+        <li>Casi studio e risorse</li>
+        <li>Job board</li>
+      </ul>
+      <a class="btn btn-white btn-lg" href="https://entra.unlikeacademy.it/?utm_source=landing-mentoring&amp;utm_medium=sezione&amp;utm_campaign=club-gratis" target="_blank" rel="noopener" data-club="sezione">Entra gratis nel Club</a>
+      <p class="club-note">Gratis per sempre, senza carta di credito · ti servono solo nome, email e password</p>
+    </div>
+    <figure class="club-shot reveal">
+      <img src="assets/club/dentro-al-club.jpg" alt="Il Club di Unlike Academy visto da dentro: corsi, dirette e community" loading="lazy" width="1200" height="682">
+      <figcaption>Il Club appena entri</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- GARANZIA -->
 <section class="sec bg-carta">
   <div class="wrap">
@@ -1379,6 +1429,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
       <div>
         <div class="ft-logo"><img src="assets/logo/logo.webp" alt="Unlike Academy"></div>
         <p class="ft-desc">L'academy italiana di social media marketing organico per Instagram e TikTok. Dal 2022, centinaia di profili trasformati.</p>
+        <a class="ft-club" href="https://entra.unlikeacademy.it/?utm_source=landing-mentoring&amp;utm_medium=footer&amp;utm_campaign=club-gratis" target="_blank" rel="noopener" data-club="footer">Entra gratis nel Club</a>
       </div>
       <div class="ft-legal">
         <h4>Legale</h4>
@@ -1640,6 +1691,9 @@ form.addEventListener('submit',async e=>{
 });
 form.querySelectorAll('input').forEach(i=>i.addEventListener('input',()=>{i.classList.remove('err');const f=i.closest('.fset');if(f)f.classList.remove('err');}));
 function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+<script>
+document.querySelectorAll('[data-club]').forEach(a=>a.addEventListener('click',()=>{try{window.fbq&&fbq('trackCustom','ClubGratisClick',{posizione:a.dataset.club})}catch(e){}}));
 </script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mentoring.unlikeacademy.it/sitemap.xml

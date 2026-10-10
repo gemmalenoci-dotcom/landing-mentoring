@@ -973,6 +973,17 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
 #casi{scroll-margin-top:72px}
 @media (max-width:900px){.hero-photo .hero-badge{left:-10px;bottom:22px}}
 @media (max-width:540px){.hero-photo .hero-badge{padding:13px 16px 15px;max-width:190px}.hero-photo .hero-badge b{font-size:38px}.hero-photo .hero-badge span{font-size:13.5px}.hb-volti img{width:36px;height:36px}.hb-volti{margin-top:-32px}}
+
+/* Katia nella sezione dei cinque passaggi */
+.katia-call{display:flex;align-items:center;justify-content:center;gap:26px;max-width:640px;margin:34px auto 6px}
+.kc-foto{position:relative;flex:0 0 150px;background:#fff;padding:9px 9px 34px;border-radius:6px;rotate:-3deg;box-shadow:0 22px 40px -22px rgba(0,0,0,.6),6px 7px 0 rgba(255,255,255,.14)}
+.kc-foto::before{content:'';position:absolute;top:-19px;left:50%;width:40px;height:40px;margin-left:-20px;background:url(assets/deco/puntina.png) center/contain no-repeat;z-index:2}
+.kc-foto img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:3px}
+.kc-foto figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--mano);font-size:1.35rem;color:var(--ink);line-height:1}
+.katia-call p{color:rgba(255,255,255,.88);font-size:1.12rem;line-height:1.5;text-align:left;margin:0}
+.katia-call p b{color:#fff}
+.ft-agency{color:inherit;font-weight:700;text-decoration:none;border-bottom:1.5px solid currentColor}
+@media (max-width:540px){.katia-call{flex-direction:column;gap:18px;text-align:center}.katia-call p{text-align:center;font-size:1.02rem}.kc-foto{flex-basis:auto;width:150px}}
 </style>
 </head>
 <body>
@@ -1563,8 +1574,12 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
 <section class="sec band-ink bg-scuro">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
-      <div class="eyebrow c">Cosa succede dopo la prenotazione</div>
-      <h2 class="sh">La consulenza si svolge in <em>cinque</em> semplici passaggi.</h2>
+      <div class="eyebrow c">La consulenza gratuita con il team Unlike</div>
+      <h2 class="sh">La consulenza gratuita si svolge in <em>cinque</em> semplici passaggi</h2>
+    </div>
+    <div class="katia-call reveal">
+      <figure class="kc-foto"><img src="assets/team/katia.jpg" alt="Katia del team Unlike" width="560" height="700" loading="lazy"><figcaption>Katia</figcaption></figure>
+      <p>La call la fai con <b>Katia</b>, del team Unlike: è lei che legge le tue risposte e ti accompagna in questi cinque passaggi</p>
     </div>
     <div class="steps5">
       <div class="step5 reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)"><h3 style="color:#fff">Compili un breve questionario</h3><p style="color:rgba(255,255,255,.7)">Ci racconti la tua attività, gli obiettivi e cosa ti sta bloccando.</p></div>
@@ -1635,7 +1650,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
     </div>
     <div class="ft-bottom">
       <span>© <span id="yr"></span> Unlike Academy · UNLIKE FZCO · Building A1, DSO, Dubai (UAE) · TRN 104228845400003</span>
-      <span>Website Creation by Unlike Agency</span>
+      <span>Website Creation by <a class="ft-agency" href="https://unlikeagency.com/" target="_blank" rel="noopener">Unlike Agency</a></span>
     </div>
   </div>
 </footer>

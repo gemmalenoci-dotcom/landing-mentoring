@@ -784,6 +784,20 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
 .ft-club{display:inline-block;margin-top:14px;font-weight:800;color:var(--fucsia);text-decoration:none;border-bottom:2px solid rgba(205,36,113,.35)}
 @media (max-width:900px){.club{grid-template-columns:1fr}.club-shot{max-width:560px;margin-top:8px}}
 @media (max-width:540px){.club-bar{font-size:13.5px;padding:9px 12px}.club-bar .cb-l{display:none}.club-bar .cb-s{display:inline}.club .btn{width:100%}}
+
+/* adesivo 500+ con i volti delle clienti */
+.hero-photo .hero-badge{display:block;left:-34px;bottom:30px;padding:16px 20px 18px;border-radius:8px;rotate:-4deg;box-shadow:6px 7px 0 rgba(59,54,56,.22);text-align:left;max-width:230px}
+.hb-volti{display:flex;margin:-38px 0 10px -4px}
+.hb-volti img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:3px solid #fff;margin-left:-11px;box-shadow:0 6px 14px -8px rgba(59,54,56,.6);background:#fff}
+.hb-volti img:first-child{margin-left:0}
+.hb-volti img:nth-child(odd){translate:0 -3px}
+.hero-photo .hero-badge b{font-size:46px;line-height:.9;letter-spacing:-.05em;display:block}
+.hero-photo .hero-badge span{display:block;font-size:15px;line-height:1.2;margin-top:6px}
+.hb-btn{display:inline-block;margin-top:12px;background:#fff;color:var(--fucsia);font-weight:800;font-size:13.5px;text-decoration:none;border-radius:100px;padding:7px 16px;box-shadow:3px 3px 0 rgba(59,54,56,.18);transition:transform .2s}
+.hb-btn:hover{transform:translate(-1px,-2px)}
+#casi{scroll-margin-top:72px}
+@media (max-width:900px){.hero-photo .hero-badge{left:-10px;bottom:22px}}
+@media (max-width:540px){.hero-photo .hero-badge{padding:13px 16px 15px;max-width:190px}.hero-photo .hero-badge b{font-size:38px}.hero-photo .hero-badge span{font-size:13.5px}.hb-volti img{width:36px;height:36px}.hb-volti{margin-top:-32px}}
 </style>
 </head>
 <body>
@@ -816,7 +830,12 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
     <div class="hero-photo">
       <span class="blob"></span>
       <div class="frame"><img src="assets/img/gemma-scrivania.jpg?v=2" alt="Gemma Lenoci alla scrivania del suo ufficio durante una call" width="1200" height="1200"></div>
-      <div class="hero-badge"><div><b>500+</b><span>casi e progetti<br>analizzati dal team</span></div></div>
+      <div class="hero-badge">
+        <div class="hb-volti" aria-hidden="true"><img src="assets/volti/sara-orsini.jpg" alt="" width="40" height="40"><img src="assets/volti/naomi-di-costanzo.jpg" alt="" width="40" height="40"><img src="assets/volti/francesca-leone.jpg" alt="" width="40" height="40"><img src="assets/volti/susanna-tedeschi.jpg" alt="" width="40" height="40"><img src="assets/volti/vanessa-lacalamita.jpg" alt="" width="40" height="40"></div>
+        <b>500+</b>
+        <span>casi e progetti<br>seguiti dal team</span>
+        <a class="hb-btn" href="#casi">Scoprili</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1033,7 +1052,7 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
 </section>
 
 <!-- PROVA SOCIALE / CASI STUDIO -->
-<section class="sec bg-quaderno">
+<section class="sec bg-quaderno" id="casi">
   <div class="wrap">
     <div class="narrow reveal" style="margin-inline:auto;text-align:center">
       <div class="eyebrow c">Alcuni casi studio</div>

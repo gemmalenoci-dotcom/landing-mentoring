@@ -1891,6 +1891,9 @@ const modal=document.getElementById('formModal');
 function openModal(){modal.classList.add('on');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('nome').focus(),100);}
 function closeModal(){modal.classList.remove('on');document.body.style.overflow='';}
 document.querySelectorAll('[data-open-form]').forEach(b=>b.addEventListener('click',openModal));
+/* #prenota apre subito il modulo (link diretti da risorse, DM e ManyChat) */
+function apriDaHash(){if(location.hash==='#prenota')openModal();}
+apriDaHash();window.addEventListener('hashchange',apriDaHash);
 document.getElementById('modalX').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('on'))closeModal();});

@@ -984,6 +984,16 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
 .katia-call p b{color:#fff}
 .ft-agency{color:inherit;font-weight:700;text-decoration:none;border-bottom:1.5px solid currentColor}
 @media (max-width:540px){.katia-call{flex-direction:column;gap:18px;text-align:center}.katia-call p{text-align:center;font-size:1.02rem}.kc-foto{flex-basis:auto;width:150px}}
+
+/* ===== LA TUA DASHBOARD (13/10): finestra dal computer + telefono accanto, ingrandibili ===== */
+.dash-vis{position:relative;padding:4px 15% 70px 0}
+.dash-vis .shot{rotate:-1deg;box-shadow:0 26px 50px -26px rgba(59,54,56,.55),7px 8px 0 rgba(34,124,192,.28)}
+.dash-vis .shot img{display:block;width:100%;height:auto}
+.dash-tel{position:absolute;right:0;bottom:0;width:26%;padding:7px;border:none;border-radius:28px;background:#1d1b1c;cursor:zoom-in;rotate:4deg;box-shadow:0 22px 40px -18px rgba(59,54,56,.7),6px 7px 0 rgba(205,36,113,.3)}
+.dash-tel img{display:block;width:100%;height:auto;border-radius:22px}
+.dash-vis figcaption{font-size:13.5px;color:var(--gray);margin-top:16px;max-width:66%}
+.dash-sec ul.check{margin-top:26px}
+@media (max-width:900px){.dash-vis{margin-top:34px;padding-right:18%}.dash-tel{width:28%}.dash-vis figcaption{max-width:62%}}
 </style>
 </head>
 <body>
@@ -1233,6 +1243,30 @@ span.av{background:var(--fucsia)!important;color:#fff!important}
       <div class="fase reveal"><span class="fn">Fase 3</span><div><h3>Applicazione</h3><p>Trasformi la strategia in contenuti, attività e decisioni reali. Non lavori su esercizi teorici scollegati dal tuo progetto: <b class="k">lavori direttamente sulla tua comunicazione</b>.</p></div></div>
       <div class="fase reveal"><span class="fn">Fase 4</span><div><h3>Revisione</h3><p>Analizziamo ciò che hai prodotto. Individuiamo cosa funziona, cosa è poco chiaro e cosa deve essere corretto. Il feedback ti permette di <b class="k">migliorare più velocemente</b> e di evitare di ripetere gli stessi errori.</p></div></div>
       <div class="fase reveal"><span class="fn">Fase 5</span><div><h3>Ottimizzazione</h3><p>Osserviamo le risposte del mercato e adattiamo il lavoro. Perché una strategia non deve essere semplicemente bella sulla carta: <b class="k">deve funzionare nel mondo reale</b>.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LA TUA DASHBOARD -->
+<section class="sec bg-tenue dash-sec" id="dashboard">
+  <div class="split">
+    <div class="split-l">
+      <div class="eyebrow reveal">La tua dashboard</div>
+      <h2 class="sh reveal">Sai sempre <span style="white-space:nowrap">cosa fare</span> <mark>questa settimana</mark></h2>
+      <p class="lead reveal" style="margin-top:16px">Ogni percorso ha la sua dashboard: le tappe mese per mese e, dentro ogni tappa, <b class="k">lezioni, esercizi, risorse e call nell'ordine giusto</b>, così spunti quello che hai fatto e vedi subito a che punto sei</p>
+      <ul class="check reveal">
+        <li><b class="k">Una tappa al mese</b>: quella in corso è in evidenza, le prossime si aprono il primo lunedì del mese e vedi già la data</li>
+        <li><b class="k">Tutto in ordine</b>: lezioni, esercizi e call della tappa, con il collegamento diretto al tuo portale</li>
+        <li><b class="k">La barra dei progressi</b> ti dice quanto hai fatto e cosa manca</li>
+        <li><b class="k">Dal telefono come dal computer</b>, senza password: entri con il link che ti arriva via email</li>
+      </ul>
+    </div>
+    <div class="split-r">
+      <figure class="dash-vis reveal">
+        <button class="shot" data-zoom="assets/dashboard/dashboard-percorso.jpg" aria-label="Ingrandisci la dashboard del percorso"><img loading="lazy" src="assets/dashboard/dashboard-percorso.jpg" alt="La dashboard del percorso: avanzamento, tappa in corso e tappe dei mesi successivi con la data di apertura" width="1600" height="1000"></button>
+        <button class="dash-tel" data-zoom="assets/dashboard/dashboard-tappa-telefono.jpg" aria-label="Ingrandisci la dashboard dal telefono"><img loading="lazy" src="assets/dashboard/dashboard-tappa-telefono.jpg" alt="Una tappa del percorso dal telefono: obiettivo, attività spuntate e barra dei progressi" width="585" height="1266"></button>
+        <figcaption>La dashboard del percorso Professionista, dal computer e dal telefono</figcaption>
+      </figure>
     </div>
   </div>
 </section>
